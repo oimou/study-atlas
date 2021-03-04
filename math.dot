@@ -33,7 +33,7 @@ graph math {
             a_prop_1_5_5 [label="定理5.5. 比較定理"]
             a_prop_1_7_2 [label="定理7.2. 点列コンパクト⇔有界閉集合"]
             a_prop_1_7_3 [label="定理7.3. 最大値の定理"]
-            a_prop_1_7_4 [label="定理7.3. ハイネ・ボレル"]
+            a_prop_1_7_4 [label="定理7.4. ハイネ・ボレル"]
             a_prop_1_8_1 [label="定理8.1. 中間値の定理"]
 
             a_example_1_1_6 [label="§1例6 平方根の存在"]

@@ -127,6 +127,12 @@ graph math {
         subgraph cluster_analysis_6 {
             label = "第6章 陰関数定理"
 
+            a_def_6_2_2 [label="§2定義2. C^r級同相写像", shape=ellipse]
+            a_def_6_4_1 [label="§4定義1. 径数付多様体", shape=ellipse]
+            a_def_6_4_2 [label="§4定義2. 径数付多様体の同値", shape=ellipse]
+            a_def_6_4_3 [label="§4定義3. 多様体", shape=ellipse]
+            a_def_6_4_7 [label="§4定義7. 双対空間", shape=ellipse]
+
             a_prop_6_1_1 [label="定理1.1. 陰関数定理I"]
             a_prop_6_1_2 [label="定理1.2. 陰関数定理II"]
             a_prop_6_2_1 [label="定理2.1. 逆関数定理II"]
@@ -184,6 +190,7 @@ graph math {
 
             l_problem_4_8 [label="問題8"]
             l_problem_4_11 [label="問題11"]
+            l_problem_4_12 [label="問題12 双対空間"]
         }
 
         subgraph cluster_linear_algebra_5 {
@@ -448,4 +455,12 @@ graph math {
     a_prop_6_2_1 -- a_prop_2_6_6
     a_prop_2_6_10 -- a_prop_2_6_9
     a_prop_2_6_10 -- a_prop_2_6_5
+
+    a_def_6_4_1 -- a_def_4_16_1
+    a_def_6_4_2 -- a_def_4_16_2
+    a_def_6_4_2 -- a_def_6_4_1
+    a_def_6_4_2 -- a_def_6_2_2
+    a_def_6_4_3 -- a_def_6_4_1
+
+    a_def_6_4_7 -- l_problem_4_12 [style=dotted]
 }

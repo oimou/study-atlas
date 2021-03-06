@@ -422,7 +422,7 @@ graph math {
 
     a_prop_6_1_1 -- a_prop_1_8_1
     a_prop_6_1_1 -- a_prop_1_3_4
-    a_prop_6_1_1 -- a_prop_1_2_2
+    a_prop_6_1_1 -- a_prop_2_2_2
 
     a_prop_3_3_4 -- a_prop_1_7_3
 }

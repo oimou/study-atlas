@@ -81,6 +81,7 @@ graph math {
         subgraph cluster_analysis_3 {
             label = "第3章 初等関数"
 
+            a_prop_3_3_4 [label="定理3.4. 代数学の基本定理"]
             a_prop_3_4_2 [label="定理4.2. 単調関数と全単射"]
         }
 
@@ -116,6 +117,8 @@ graph math {
 
         subgraph cluster_analysis_6 {
             label = "第6章 陰関数定理"
+
+            a_prop_6_1_1 [label="定理1.1. 陰関数定理I"]
 
             a_problem_6_1_2 [label="§1問題2"]
         }
@@ -416,4 +419,10 @@ graph math {
     a_prop_2_6_2 -- a_prop_1_6_8
     a_prop_4_16_3 -- a_prop_1_6_8
     a_prop_4_16_3 -- a_prop_4_16_1
+
+    a_prop_6_1_1 -- a_prop_1_8_1
+    a_prop_6_1_1 -- a_prop_1_3_4
+    a_prop_6_1_1 -- a_prop_1_2_2
+
+    a_prop_3_3_4 -- a_prop_1_7_3
 }

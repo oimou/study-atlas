@@ -19,7 +19,9 @@ graph math {
             a_concept_1_7_a [label="コンパクト", shape=ellipse]
             a_concept_1_7_b [label="点列コンパクト", shape=ellipse]
 
-            a_axiom_1_1_17 [label="公理17. 連続の公理"]
+            a_axiom_1_1_17 [label="公理17. 連続の公理", shape=ellipse]
+
+            a_def_1_8_2 [label="定義2. 弧状連結", shape=ellipse]
 
             a_prop_1_2_1 [label="定理2.1. 数学的帰納法"]
             a_prop_1_2_2 [label="定理2.2. 自然数集合の最小元"]
@@ -31,6 +33,8 @@ graph math {
             a_prop_1_3_6 [label="定理3.6. コーシーの収束条件"]
             a_prop_1_3_7 [label="定理3.7. 床関数の存在|※「自然数p,q」→「整数p,q」？", shape=record]
             a_prop_1_5_5 [label="定理5.5. 比較定理"]
+            a_prop_1_6_8 [label="定理6.8. ベクトル値関数とその成分の極限"]
+            a_prop_1_7_1 [label="命題7.1. 閉集合と開集合の基本性質"]
             a_prop_1_7_2 [label="定理7.2. 点列コンパクト⇔有界閉集合"]
             a_prop_1_7_3 [label="定理7.3. 最大値の定理"]
             a_prop_1_7_4 [label="定理7.4. ハイネ・ボレル"]
@@ -58,9 +62,10 @@ graph math {
             a_prop_2_2_3 [label="定理2.3. 平均値の定理"]
             a_prop_2_2_10 [label="定理2.10. テイラーの定理"]
             a_prop_2_2_13 [label="定理2.13. 凸関数と2階導関数"]
+            a_prop_2_6_2 [label="定理6.2. ベクトル値関数とその成分の微分可能性"]
             a_prop_2_6_5 [label="命題6.5. 行列ノルムの不等式"]
             a_prop_2_6_6 [label="定理6.6. 連鎖律"]
-            a_prop_2_6_9 [label="定理6.9. 有限増分の定理I"]
+            a_prop_2_6_9 [label="定理6.9. 有限増分の定理I|微分可能の場合", shape=record]
             a_prop_2_7_1 [label="命題7.1"]
             a_prop_2_7_2 [label="定理7.2. 多変数のテイラーの定理"]
             a_prop_2_8_1 [label="定理8.1. 極値と導関数（多変数）"]
@@ -73,8 +78,19 @@ graph math {
             a_problem_2_8_3 [label="§8問題3"]
         }
 
+        subgraph cluster_analysis_3 {
+            label = "第3章 初等関数"
+
+            a_prop_3_4_2 [label="定理4.2. 単調関数と全単射"]
+        }
+
         subgraph cluster_analysis_4 {
             label = "第4章 積分法"
+
+            a_def_4_16_1 [label="§16定義1. 径数付曲線", shape=ellipse]
+            a_def_4_16_2 [label="§16定義2. 径数付曲線の同値", shape=ellipse]
+            a_def_4_16_3 [label="§16定義3. 近似折線", shape=ellipse]
+            a_def_4_16_4 [label="§16定義4. 変動量", shape=ellipse]
 
             a_prop_4_3_1 [label="命題3.1. 細分の性質"]
             a_prop_4_3_2 [label="定理3.2. ダルブーの定理"]
@@ -83,11 +99,25 @@ graph math {
             a_prop_4_4_2 [label="命題4.1. 連続関数の可積分性"]
             a_prop_4_4_3 [label="定理4.3. 積分の強単調性"]
             a_prop_4_5_2 [label="命題5.2. 不定積分のリプシッツ連続性"]
+            a_prop_4_5_8 [label="定理5.8. 有限増分の定理II|C1級の場合", shape=record]
             a_prop_4_9_1 [label="命題9.1. 体積が0の集合"]
             a_prop_4_9_2 [label="命題9.2. 零集合の基本性質"]
+            a_prop_4_9_3 [label="命題9.3. 振幅の基本性質"]
+            a_prop_4_9_4 [label="補題9.4. ルベーグの補題"]
+            a_prop_4_9_5 [label="定理9.5. ルベーグの可積分条件"]
+
+            a_prop_4_16_1 [label="命題16.1. 弧長に関するダルブーの定理"]
+            a_prop_4_16_2 [label="定理16.2. リプシッツ連続と有界変動"]
+            a_prop_4_16_3 [label="定理16.3. 弧長の積分表式"]
 
             a_example_4_4_2 [label="§4例2 リプシッツ連続", shape=ellipse]
             a_example_4_8_4 [label="§8例4 多重有界開区間の体積"]
+        }
+
+        subgraph cluster_analysis_6 {
+            label = "第6章 陰関数定理"
+
+            a_problem_6_1_2 [label="§1問題2"]
         }
 
         subgraph cluster_analysis_8 {
@@ -348,4 +378,42 @@ graph math {
     a_prop_4_5_2 -- a_example_4_4_2
 
     a_prop_4_9_2 -- a_prop_1_5_5
+    a_prop_4_9_2 -- a_concept_1_7_a
+
+    a_problem_6_1_2 -- a_concept_2_1_a
+
+    a_prop_4_9_3 -- a_prop_1_7_1
+    a_prop_1_7_4 -- a_prop_1_7_1
+
+    a_prop_4_9_5 -- a_prop_4_9_4
+    a_prop_4_9_5 -- a_prop_4_9_3
+    a_prop_4_9_5 -- a_prop_4_9_2
+    a_prop_4_9_5 -- a_prop_4_9_1
+    a_prop_4_9_5 -- a_prop_4_3_3
+    a_prop_4_9_5 -- a_concept_1_7_a
+
+    a_def_4_16_2 -- a_prop_3_4_2
+    a_def_4_16_3 -- a_def_1_8_2
+    a_def_4_16_3 -- a_def_4_16_2
+    a_def_4_16_1 -- a_def_4_16_2
+
+    a_prop_4_16_1 -- a_def_4_16_1
+    a_prop_4_16_1 -- a_prop_4_3_2
+    a_prop_4_16_1 -- a_prop_4_4_1
+
+    a_def_4_16_4 -- a_def_4_16_3
+    a_prop_4_16_2 -- a_example_4_4_2
+    a_def_4_16_4 -- a_prop_4_16_2
+    a_prop_4_16_2 -- a_prop_2_2_3
+    a_prop_4_16_2 -- a_prop_2_6_9 [taillabel="有限増分の定理でも示せる"]
+    a_prop_4_16_2 -- a_prop_1_7_3
+    a_prop_4_16_2 -- a_prop_4_16_3
+
+    a_prop_2_6_9 -- a_prop_4_5_8
+    a_prop_4_16_3 -- a_prop_4_5_8
+
+    a_prop_2_6_6 -- a_prop_2_6_2
+    a_prop_2_6_2 -- a_prop_1_6_8
+    a_prop_4_16_3 -- a_prop_1_6_8
+    a_prop_4_16_3 -- a_prop_4_16_1
 }

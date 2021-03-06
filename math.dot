@@ -13,6 +13,12 @@ graph math {
     subgraph cluster_analysis {
         label = "解析入門"
 
+        subgraph cluster_analysis_ex1 {
+            label = "附録1 集合"
+
+            a_axiom_ex1_1 [label="選択公理", shape=ellipse]
+        }
+
         subgraph cluster_analysis_1 {
             label = "第1章 実数と連続"
 
@@ -33,6 +39,7 @@ graph math {
             a_prop_1_3_6 [label="定理3.6. コーシーの収束条件"]
             a_prop_1_3_7 [label="定理3.7. 床関数の存在|※「自然数p,q」→「整数p,q」？", shape=record]
             a_prop_1_5_5 [label="定理5.5. 比較定理"]
+            a_prop_1_6_2 [label="定理6.2. 関数の収束の点列による表現"]
             a_prop_1_6_8 [label="定理6.8. ベクトル値関数とその成分の極限"]
             a_prop_1_7_1 [label="命題7.1. 閉集合と開集合の基本性質"]
             a_prop_1_7_2 [label="定理7.2. 点列コンパクト⇔有界閉集合"]
@@ -62,10 +69,12 @@ graph math {
             a_prop_2_2_3 [label="定理2.3. 平均値の定理"]
             a_prop_2_2_10 [label="定理2.10. テイラーの定理"]
             a_prop_2_2_13 [label="定理2.13. 凸関数と2階導関数"]
+            a_prop_2_5_3 [label="定理5.3. C1級ならば微分可能"]
             a_prop_2_6_2 [label="定理6.2. ベクトル値関数とその成分の微分可能性"]
             a_prop_2_6_5 [label="命題6.5. 行列ノルムの不等式"]
             a_prop_2_6_6 [label="定理6.6. 連鎖律"]
             a_prop_2_6_9 [label="定理6.9. 有限増分の定理I|微分可能の場合", shape=record]
+            a_prop_2_6_10 [label="定理6.10. 逆関数定理I"]
             a_prop_2_7_1 [label="命題7.1"]
             a_prop_2_7_2 [label="定理7.2. 多変数のテイラーの定理"]
             a_prop_2_8_1 [label="定理8.1. 極値と導関数（多変数）"]
@@ -119,6 +128,8 @@ graph math {
             label = "第6章 陰関数定理"
 
             a_prop_6_1_1 [label="定理1.1. 陰関数定理I"]
+            a_prop_6_1_2 [label="定理1.2. 陰関数定理II"]
+            a_prop_6_2_1 [label="定理2.1. 逆関数定理II"]
 
             a_problem_6_1_2 [label="§1問題2"]
         }
@@ -249,19 +260,19 @@ graph math {
     a_prop_2_7_2 -- a_concept_2_7_a
     a_prop_1_8_1 -- a_prop_1_3_3 [label="x軸をまたがる小区間"]
     a_concept_2_7_a -- l_concept_4_a
-    a_problem_2_1_1 -- a_concept_2_1_a
+    a_problem_2_1_1 -- a_concept_2_1_a [style=dotted]
     a_prop_4_4_2 -- a_prop_4_4_1
     a_prop_4_4_1 -- a_concept_1_7_a
 
-    l_problem_5_3 -- lw_prop_5_a
-    l_problem_5_4 -- l_prop_5_2_2
+    l_problem_5_3 -- lw_prop_5_a [style=dotted]
+    l_problem_5_4 -- l_prop_5_2_2 [style=dotted]
 
     lw_prop_5_2_2 -- l_prop_5_1_2
     lw_prop_5_2_2 -- l_prop_5_1_4
-    lw_prop_5_2_2 -- lw_problem_4_0_7
+    lw_prop_5_2_2 -- lw_problem_4_0_7 [style=dotted]
     lw_prop_5_2_2 -- lw_concept_4_a
 
-    lw_problem_4_0_7 -- lw_problem_4_0_6
+    lw_problem_4_0_7 -- lw_problem_4_0_6 [style=dotted]
 
     a_prop_2_2_13 -- a_prop_1_8_1
     a_prop_1_3_4 -- a_prop_1_3_2
@@ -285,12 +296,12 @@ graph math {
 
     l_prop_5_4_1 -- l_concept_5_a
     l_prop_5_4_1 -- a_prop_2_8_2 [headlabel="別証明"]
-    l_prop_5_4_2 -- lw_problem_6_0_9
+    l_prop_5_4_2 -- lw_problem_6_0_9 [style=dotted]
 
     a_prop_2_2_10 -- a_prop_2_7_2
 
-    a_problem_2_2_1 -- a_concept_2_2_a
-    a_problem_2_2_1 -- a_prop_2_2_2
+    a_problem_2_2_1 -- a_concept_2_2_a [style=dotted]
+    a_problem_2_2_1 -- a_prop_2_2_2 [style=dotted]
 
     a_prop_2_6_5 -- a_prop_2_6_6 -- a_concept_2_6_a
     a_prop_2_6_5 -- a_prop_2_6_9
@@ -304,15 +315,15 @@ graph math {
     l_prop_2_5_5 -- l_prop_2_5_2
 
     l_prop_4_4_5 -- l_prop_2_5_5
-    l_problem_2_6 -- l_concept_2_b
-    l_problem_5_5 -- l_concept_2_c
-    l_problem_2_11 -- l_concept_2_c
-    l_problem_2_13 -- l_concept_2_c
+    l_problem_2_6 -- l_concept_2_b [style=dotted]
+    l_problem_5_5 -- l_concept_2_c [style=dotted]
+    l_problem_2_11 -- l_concept_2_c [style=dotted]
+    l_problem_2_13 -- l_concept_2_c [style=dotted]
     l_prop_4_5_1 -- l_prop_2_4_2
     l_example_4_6_6 -- a_concept_2_2_a
     l_example_4_6_7 -- l_concept_4_c
-    l_problem_4_8 -- l_concept_4_c
-    l_problem_4_11 -- l_concept_4_d
+    l_problem_4_8 -- l_concept_4_c [style=dotted]
+    l_problem_4_11 -- l_concept_4_d [style=dotted]
 
     l_prop_5_2_2 -- l_prop_5_2_1
     l_prop_5_2_4 -- l_prop_5_2_2
@@ -328,20 +339,20 @@ graph math {
     #l_concept_0_a -- l_prop_5_2_2
     #l_concept_0_a -- l_prop_5_1_4
 
-    lw_problem_4_0_7 -- l_prop_5_1_4
-    l_problem_5_3 -- l_concept_2_b
+    lw_problem_4_0_7 -- l_prop_5_1_4 [style=dotted]
+    l_problem_5_3 -- l_concept_2_b [style=dotted]
     l_prop_5_1_4 -- l_prop_5_1_2
 
-    lw_problem_4_0_7 -- lw_prop_5_a
-    lw_problem_4_0_7 -- l_prop_5_1_1 [taillabel="スカラーを掛ける方法は不可"]
-    lw_problem_4_0_5 -- l_concept_2_b
-    lw_problem_4_0_7 -- lw_prop_2_2_10
+    lw_problem_4_0_7 -- lw_prop_5_a [style=dotted]
+    lw_problem_4_0_7 -- l_prop_5_1_1 [taillabel="スカラーを掛ける方法は不可"] [style=dotted]
+    lw_problem_4_0_5 -- l_concept_2_b [style=dotted]
+    lw_problem_4_0_7 -- lw_prop_2_2_10 [style=dotted]
 
     a_problem_2_2_1 -- a_prop_2_1_5
 
     a_axiom_1_1_17 -- a_example_1_1_6
-    a_axiom_1_1_17 -- a_problem_1_3_7
-    a_axiom_1_1_17 -- a_problem_1_3_8
+    a_axiom_1_1_17 -- a_problem_1_3_7 [style=dotted]
+    a_axiom_1_1_17 -- a_problem_1_3_8 [style=dotted]
 
     a_prop_1_3_6 -- a_prop_1_3_5
     a_prop_1_3_6 -- a_prop_1_3_4
@@ -350,8 +361,8 @@ graph math {
     a_prop_1_3_1 -- a_axiom_1_1_17
 
     a_prop_1_3_6 -- a_remark_1_1_4
-    a_remark_1_1_4 -- a_problem_1_3_7
-    a_remark_1_1_4 -- a_problem_1_3_8
+    a_remark_1_1_4 -- a_problem_1_3_7 [style=dotted]
+    a_remark_1_1_4 -- a_problem_1_3_8 [style=dotted]
     a_remark_1_1_4 -- a_axiom_1_1_17
 
     a_prop_1_2_2 -- a_prop_1_2_1
@@ -366,15 +377,16 @@ graph math {
     a_prop_2_8_4 -- a_prop_2_7_2
     a_prop_2_8_4 -- a_prop_2_8_3
 
-    a_problem_2_8_3 -- a_concept_2_2_a
+    a_problem_2_8_3 -- a_concept_2_2_a [style=dotted]
 
-    a_def_8_2 -- l_problem_2_13
+    a_def_8_2 -- l_problem_2_13 [style=dotted]
 
-    lw_prop_5_3_1 -- lw_problem_4_0_10
-    lw_problem_4_0_10 -- lw_concept_4_b
+    lw_prop_5_3_1 -- lw_problem_4_0_10 [style=dotted]
+    lw_problem_4_0_10 -- lw_concept_4_b [style=dotted]
     lw_prop_5_3_1 -- lw_concept_4_b
 
-    a_prop_4_9_1 -- a_prop_4_3_3 -- a_prop_4_3_2
+    a_prop_4_9_1 -- a_prop_4_3_3
+    a_prop_4_3_3 -- a_prop_4_3_2
     a_prop_4_9_1 -- a_example_4_8_4
     a_prop_4_9_1 -- a_prop_4_3_1
 
@@ -383,7 +395,7 @@ graph math {
     a_prop_4_9_2 -- a_prop_1_5_5
     a_prop_4_9_2 -- a_concept_1_7_a
 
-    a_problem_6_1_2 -- a_concept_2_1_a
+    a_problem_6_1_2 -- a_concept_2_1_a [style=dotted]
 
     a_prop_4_9_3 -- a_prop_1_7_1
     a_prop_1_7_4 -- a_prop_1_7_1
@@ -423,6 +435,17 @@ graph math {
     a_prop_6_1_1 -- a_prop_1_8_1
     a_prop_6_1_1 -- a_prop_1_3_4
     a_prop_6_1_1 -- a_prop_2_2_2
+    a_prop_6_1_1 -- a_prop_1_6_2
 
     a_prop_3_3_4 -- a_prop_1_7_3
+
+    a_prop_1_6_2 -- a_axiom_ex1_1
+    a_prop_6_1_1 -- a_prop_2_5_3
+    a_prop_6_1_1 -- a_prop_6_1_2 [headlabel="ベクトル値関数への拡張"]
+
+    a_prop_6_2_1 -- a_prop_6_1_2
+    a_prop_6_2_1 -- a_prop_2_6_10 [taillabel="局所化"]
+    a_prop_6_2_1 -- a_prop_2_6_6
+    a_prop_2_6_10 -- a_prop_2_6_9
+    a_prop_2_6_10 -- a_prop_2_6_5
 }

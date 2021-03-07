@@ -4,6 +4,7 @@ graph math {
         splines = true
         rankdir = LR
         ranksep=2
+        overlap=false
     ]
 
     node [
@@ -63,6 +64,8 @@ graph math {
             a_concept_2_6_a [label="ヘッセ行列", shape=ellipse]
             a_concept_2_7_a [label="微分（differential）", shape=ellipse]
 
+            a_def_2_5_2 [label="§5定義2. 接超平面"]
+
             a_prop_2_1_5 [label="命題1.5. ライプニッツの公式"]
             a_prop_2_2_1 [label="定理2.1. 極値と導関数"]
             a_prop_2_2_2 [label="定理2.2. ロルの定理"]
@@ -105,11 +108,15 @@ graph math {
             a_prop_4_3_1 [label="命題3.1. 細分の性質"]
             a_prop_4_3_2 [label="定理3.2. ダルブーの定理"]
             a_prop_4_3_3 [label="定理3.3. 可積分条件"]
+            a_prop_4_3_5 [label="定理3.5. 積分の三角不等式"]
             a_prop_4_4_1 [label="定理4.1. ハイネの定理"]
-            a_prop_4_4_2 [label="命題4.1. 連続関数の可積分性"]
+            a_prop_4_4_2 [label="命題4.2. 連続関数の可積分性"]
             a_prop_4_4_3 [label="定理4.3. 積分の強単調性"]
             a_prop_4_5_2 [label="命題5.2. 不定積分のリプシッツ連続性"]
-            a_prop_4_5_8 [label="定理5.8. 有限増分の定理II|C1級の場合", shape=record]
+            a_prop_4_5_3 [label="定理5.3. 微分積分学の基本定理I"]
+            a_prop_4_5_4 [label="定理5.4. 微分積分学の基本定理II"]
+            a_prop_4_5_6 [label="命題5.6. 変数変換公式"]
+            a_prop_4_5_8 [label="<pl>定理5.8. 有限増分の定理II|<pr>C1級の場合", shape=record]
             a_prop_4_9_1 [label="命題9.1. 体積が0の集合"]
             a_prop_4_9_2 [label="命題9.2. 零集合の基本性質"]
             a_prop_4_9_3 [label="命題9.3. 振幅の基本性質"]
@@ -131,6 +138,7 @@ graph math {
             a_def_6_4_1 [label="§4定義1. 径数付多様体", shape=ellipse]
             a_def_6_4_2 [label="§4定義2. 径数付多様体の同値", shape=ellipse]
             a_def_6_4_3 [label="§4定義3. 多様体", shape=ellipse]
+            a_def_6_4_4 [label="§4定義4. 接ベクトル空間", shape=ellipse]
             a_def_6_4_7 [label="§4定義7. 双対空間", shape=ellipse]
 
             a_prop_6_1_1 [label="定理1.1. 陰関数定理I"]
@@ -140,10 +148,22 @@ graph math {
             a_problem_6_1_2 [label="§1問題2"]
         }
 
+        subgraph cluster_analysis_7 {
+            label = "第7章 積分法（続き）"
+
+            a_def_7_3_1 [label="§3定義1. アフィン変換・合同変換", shape=ellipse]
+        }
+
         subgraph cluster_analysis_8 {
             label = "第8章 ベクトル解析"
 
-            a_def_8_2 [label="定義2. 回転"]
+            a_def_8_1_2 [label="§1定義2. 回転", shape=ellipse]
+            a_def_8_2_0 [label="§2定義0. 向きのついた曲線", shape=ellipse]
+            a_def_8_2_1 [label="§2定義1. 線積分", shape=ellipse]
+            a_def_8_2_2 [label="§2定義2. 1次元チェイン", shape=ellipse]
+
+            a_prop_8_2_1 [label="命題2.1. 線積分の線型性"]
+            a_prop_8_2_2 [label="命題2.2. 合同変換による線積分の不変性"]
         }
     }
 
@@ -386,7 +406,7 @@ graph math {
 
     a_problem_2_8_3 -- a_concept_2_2_a [style=dotted]
 
-    a_def_8_2 -- l_problem_2_13 [style=dotted]
+    a_def_8_1_2 -- l_problem_2_13 [style=dotted]
 
     lw_prop_5_3_1 -- lw_problem_4_0_10 [style=dotted]
     lw_problem_4_0_10 -- lw_concept_4_b [style=dotted]
@@ -463,4 +483,26 @@ graph math {
     a_def_6_4_3 -- a_def_6_4_1
 
     a_def_6_4_7 -- l_problem_4_12 [style=dotted]
+
+    a_def_6_4_4 -- a_def_2_5_2
+    a_def_6_4_4 -- a_concept_2_7_a
+
+    a_prop_8_2_1 -- a_prop_4_3_5
+    a_prop_4_3_5 -- a_prop_4_3_3
+
+    a_def_8_2_0 -- a_def_4_16_1
+    a_def_8_2_1 -- a_def_8_2_0
+    a_def_8_2_1 -- a_def_4_16_3
+    a_def_8_2_1 -- a_concept_2_7_a
+    a_def_8_2_1 -- a_prop_4_5_6
+
+    a_prop_4_5_6 -- a_prop_2_6_6
+    a_prop_4_5_6 -- a_prop_4_5_3
+    a_prop_4_5_6 -- a_prop_4_4_2
+    a_prop_4_5_4 -- a_prop_4_5_3
+    a_prop_4_5_3 -- a_prop_2_2_3
+
+    a_def_8_2_2 -- a_def_8_2_0
+
+    a_prop_8_2_2 -- a_def_7_3_1
 }

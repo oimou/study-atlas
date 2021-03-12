@@ -2,7 +2,7 @@ graph math {
     graph [
         layout = dot
         splines = true
-        rankdir = LR
+        rankdir = RL
         ranksep=2
         overlap=false
     ]
@@ -39,9 +39,11 @@ graph math {
             a_prop_1_3_5 [label="命題3.5. コーシー列の基本性質"]
             a_prop_1_3_6 [label="定理3.6. コーシーの収束条件"]
             a_prop_1_3_7 [label="定理3.7. 床関数の存在|※「自然数p,q」→「整数p,q」？", shape=record]
+            a_prop_1_4_5 [label="定理4.5. 点列に関するコーシーの条件"]
             a_prop_1_5_5 [label="定理5.5. 比較定理"]
             a_prop_1_6_2 [label="定理6.2. 関数の収束の点列による表現"]
             a_prop_1_6_8 [label="定理6.8. ベクトル値関数とその成分の極限"]
+            a_prop_1_6_10 [label="定理6.10. 関数に関するコーシーの条件"]
             a_prop_1_7_1 [label="命題7.1. 閉集合と開集合の基本性質"]
             a_prop_1_7_2 [label="定理7.2. 点列コンパクト⇔有界閉集合"]
             a_prop_1_7_3 [label="定理7.3. 最大値の定理"]
@@ -102,6 +104,11 @@ graph math {
         subgraph cluster_analysis_4 {
             label = "第4章 積分法"
 
+            a_def_4_8_1 [label="§8定義1. 有界集合上の積分", shape=ellipse]
+            a_def_4_8_2 [label="§8定義2. 体積確定", shape=ellipse]
+            a_def_4_12_1 [label="§12定義1. Γ関数とB関数", shape=ellipse]
+            a_def_4_13_1 [label="§13定義1. 関数列の一様収束", shape=ellipse]
+            a_def_4_13_2 [label="§13定義2. 関数族の一様収束", shape=ellipse]
             a_def_4_16_1 [label="§16定義1. 径数付曲線", shape=ellipse]
             a_def_4_16_2 [label="§16定義2. 径数付曲線の同値", shape=ellipse]
             a_def_4_16_3 [label="§16定義3. 近似折線", shape=ellipse]
@@ -111,6 +118,8 @@ graph math {
             a_prop_4_3_2 [label="定理3.2. ダルブーの定理"]
             a_prop_4_3_3 [label="定理3.3. 可積分条件"]
             a_prop_4_3_5 [label="定理3.5. 積分の三角不等式"]
+            a_prop_4_3_6 [label="定理3.6. 積の可積分性"]
+            a_prop_4_3_8 [label="定理3.8. 区間に関する加法性"]
             a_prop_4_4_1 [label="定理4.1. ハイネの定理"]
             a_prop_4_4_2 [label="命題4.2. 連続関数の可積分性"]
             a_prop_4_4_3 [label="定理4.3. 積分の強単調性"]
@@ -119,18 +128,38 @@ graph math {
             a_prop_4_5_4 [label="定理5.4. 微分積分学の基本定理II"]
             a_prop_4_5_6 [label="命題5.6. 変数変換公式"]
             a_prop_4_5_8 [label="<pl>定理5.8. 有限増分の定理II|<pr>C1級の場合", shape=record]
+            a_prop_4_8_1 [label="命題8.1. 有界集合上の積分の well-definedness"]
             a_prop_4_9_1 [label="命題9.1. 体積が0の集合"]
             a_prop_4_9_2 [label="命題9.2. 零集合の基本性質"]
             a_prop_4_9_3 [label="命題9.3. 振幅の基本性質"]
             a_prop_4_9_4 [label="補題9.4. ルベーグの補題"]
             a_prop_4_9_5 [label="定理9.5. ルベーグの可積分条件"]
-
+            a_prop_4_9_6 [label="定理9.6. 体積確定性の境界による判定"]
+            a_prop_4_9_7 [label="定理9.7. 可積分性と殆ど至る所での連続性"]
+            a_prop_4_10_1 [label="定理10.1. 平面極座標への変換公式"]
+            a_prop_4_11_1 [label="命題11.1. コーシーの条件"]
+            a_prop_4_11_2 [label="命題11.2. 優関数の方法"]
+            a_prop_4_11_3 [label="定理11.3. 次数による収束判定条件"]
+            a_prop_4_12_1 [label="定理12.1. Γ関数とB関数の収束"]
+            a_prop_4_12_2 [label="定理12.2. Γ関数とB関数の基本性質"]
+            a_prop_4_12_3 [label="定理12.3. Γ関数とB関数の関係I"]
+            a_prop_4_12_4 [label="定理12.4. Γ関数とB関数の関係II"]
+            a_prop_4_13_1 [label="命題13.1. 一様ノルムがノルムであること"]
+            a_prop_4_13_2 [label="命題13.2. 一様収束ならば各点収束"]
+            a_prop_4_13_3 [label="定理13.3. 連続関数の極限関数も連続"]
+            a_prop_4_13_3c1 [label="定理13.3.系1. 極限の交換"]
             a_prop_4_16_1 [label="命題16.1. 弧長に関するダルブーの定理"]
             a_prop_4_16_2 [label="定理16.2. リプシッツ連続と有界変動"]
             a_prop_4_16_3 [label="定理16.3. 弧長の積分表式"]
 
+            a_example_4_2_2 [label="§2例2 ディリクレ関数", shape=ellipse]
+            a_example_4_3_4 [label="§3例4 内部で0をとる関数の積分"]
             a_example_4_4_2 [label="§4例2 リプシッツ連続", shape=ellipse]
             a_example_4_8_4 [label="§8例4 多重有界開区間の体積"]
+            a_example_4_9_3 [label="§9例3 ディリクレ関数と零集合"]
+            a_example_4_9_6 [label="§9例6 区分的C1級曲線で囲まれた図形の体積確定性"]
+
+            a_problem_4_8_1 [label="§8問題1"]
         }
 
         subgraph cluster_analysis_6 {
@@ -251,6 +280,10 @@ graph math {
             label = "第2章 行列、一次方程式系"
 
             lw_prop_2_2_10 [label="命題2.2.10. 上三角行列の性質"]
+            lw_prop_2_7_2 [label="命題2.7.2. 行列値関数の微分"]
+            lw_prop_2_7_3 [label="命題2.7.2. 行列値関数の微分の基本性質"]
+            lw_prop_2_7_8 [label="定理2.7.8. 行列の極限とノルムの極限"]
+            lw_prop_2_7_9 [label="定理2.7.9. 完備性"]
         }
 
         subgraph cluster_linear_algebra_work_3 {
@@ -268,6 +301,7 @@ graph math {
             lw_problem_4_0_5 [label="章末5"]
             lw_problem_4_0_6 [label="章末6"]
             lw_problem_4_0_7 [label="章末7（広義固有空間の次元と重複度）"]
+            lw_problem_4_0_9 [label="章末9"]
             lw_problem_4_0_10 [label="章末10"]
         }
 
@@ -512,4 +546,57 @@ graph math {
     a_prop_2_2_4 -- a_prop_2_2_3
     a_prop_2_2_14 -- a_prop_2_2_13
     a_prop_2_2_14 -- a_prop_2_2_3
+
+    a_def_4_8_2 -- a_def_4_8_1
+
+    a_prop_4_3_6 -- a_prop_4_3_3
+
+    a_prop_4_8_1 -- a_prop_4_3_8
+    a_prop_4_3_8 -- a_prop_4_3_3
+    a_prop_4_8_1 -- a_example_4_3_4
+
+    a_def_4_8_1 -- a_prop_4_8_1
+
+    a_example_4_9_3 -- a_example_4_2_2
+    a_example_4_9_3 -- a_prop_4_9_5
+    a_example_4_9_3 -- a_prop_4_9_2
+    a_problem_4_8_1 -- a_example_4_2_2 [style=dotted]
+
+    a_example_4_9_6 -- a_prop_4_9_6
+    a_prop_4_9_6 -- a_prop_4_9_2
+    a_prop_4_9_6 -- a_prop_1_7_4
+    a_example_4_9_6 -- a_example_4_4_2
+
+    a_prop_4_9_7 -- a_prop_4_9_2
+    a_prop_4_9_7 -- a_prop_4_9_6
+
+    a_prop_1_6_10 -- a_prop_1_4_5
+    a_prop_1_6_10 -- a_prop_1_6_2
+    a_prop_4_11_1 -- a_prop_1_6_10
+    a_prop_4_11_2 -- a_prop_4_11_1
+    a_prop_4_11_2 -- a_prop_4_3_5
+    a_prop_4_11_3 -- a_prop_4_11_2
+
+    a_prop_4_12_1 -- a_def_4_12_1
+    a_prop_4_12_2 -- a_def_4_12_1
+    a_prop_4_12_1 -- a_prop_4_11_3
+    a_prop_4_12_2 -- a_prop_4_4_3
+    a_prop_4_12_3 -- a_prop_4_12_2
+    a_prop_4_12_3 -- a_prop_4_10_1
+    a_prop_4_12_4 -- a_prop_4_12_3
+    a_prop_4_12_4 -- a_prop_4_12_2
+
+    a_prop_4_13_1 -- a_def_4_13_1
+    a_def_4_13_2 -- a_def_4_13_1
+    a_prop_4_13_2 -- a_def_4_13_1
+    a_prop_4_13_2 -- a_def_4_13_2
+
+    lw_problem_4_0_10 -- lw_problem_4_0_9 [style=dotted]
+
+    lw_prop_2_7_3 -- lw_prop_2_7_2
+
+    a_prop_4_13_3 -- a_def_4_13_2
+    a_prop_4_13_3c1 -- a_prop_4_13_3
+
+    lw_prop_2_7_9 -- a_prop_1_4_5
 }

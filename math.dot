@@ -320,7 +320,9 @@ graph math {
         subgraph cluster_linear_algebra_work_3 {
             label = "第3章 線型空間と線型写像"
 
-            lw_prop_5_a [label="定理3.4.7. 行列の三角化"]
+            lw_prop_3_4_7 [label="定理3.4.7. 行列の三角化"]
+
+            lw_example_3_2_14 [label="例3.2.14. ヴァンデルモンドの行列式"]
         }
 
         subgraph cluster_linear_algebra_work_4 {
@@ -341,6 +343,7 @@ graph math {
 
             lw_prop_5_2_2 [label="定理5.2.2. 対角型線型変換"]
             lw_prop_5_3_1 [label="解説5.3.1. 斉次線型微分方程式について"]
+            lw_prop_5_3_6 [label="解説5.3.6. 回帰数列について"]
         }
 
         subgraph cluster_linear_algebra_work_6 {
@@ -358,7 +361,7 @@ graph math {
     a_prop_4_4_2 -- a_prop_4_4_1
     a_prop_4_4_1 -- a_def_1_7_4
 
-    l_problem_5_3 -- lw_prop_5_a [style=dotted]
+    l_problem_5_3 -- lw_prop_3_4_7 [style=dotted]
     l_problem_5_4 -- l_prop_5_2_2 [style=dotted]
 
     lw_prop_5_2_2 -- l_prop_5_1_2
@@ -427,7 +430,7 @@ graph math {
     #l_concept_0_a -- l_concept_4_d
     #l_concept_0_a -- l_concept_5_b
     #l_concept_0_a -- l_concept_5_c
-    #l_concept_0_a -- lw_prop_5_a
+    #l_concept_0_a -- lw_prop_3_4_7
     #l_concept_0_a -- l_prop_5_2_4
     #l_concept_0_a -- l_prop_5_3_1
     #l_concept_0_a -- l_prop_5_2_2
@@ -437,7 +440,7 @@ graph math {
     l_problem_5_3 -- l_concept_2_b [style=dotted]
     l_prop_5_1_4 -- l_prop_5_1_2
 
-    lw_problem_4_0_7 -- lw_prop_5_a [style=dotted]
+    lw_problem_4_0_7 -- lw_prop_3_4_7 [style=dotted]
     lw_problem_4_0_7 -- l_prop_5_1_1 [taillabel="スカラーを掛ける方法は不可"] [style=dotted]
     lw_problem_4_0_5 -- l_concept_2_b [style=dotted]
     lw_problem_4_0_7 -- lw_prop_2_2_10 [style=dotted]
@@ -678,7 +681,7 @@ graph math {
 
     a_prop_4_14_2 -- a_prop_4_13_5 [taillabel="広義積分に対して", headlabel="級数に対して"]
     a_prop_4_14_2 -- a_prop_1_6_10
-    a_prop_4_14_2 -- a_prop_1_13_4
+    a_prop_4_14_2 -- a_prop_4_13_4
 
     a_prop_4_7_2 -- a_prop_4_7_1
     a_prop_4_7_3 -- a_prop_4_4_2
@@ -705,4 +708,7 @@ graph math {
     a_prop_6_3_1c1 -- a_example_6_3_1 [style=dotted]
     a_example_6_3_1 -- a_prop_2_8_4 [style=dotted]
     a_example_6_3_1 -- a_concept_2_1_a [style=dotted]
+
+    lw_prop_5_3_6 -- lw_prop_5_3_1 [label="微分作用素とずらし変換が対応"]
+    lw_prop_5_3_6 -- lw_example_3_2_14 [style=dotted]
 }

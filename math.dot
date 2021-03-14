@@ -87,7 +87,7 @@ graph math {
             a_prop_2_8_1 [label="定理8.1. 極値と導関数（多変数）"]
             a_prop_2_8_2 [label="定理8.2. 二次形式"]
             a_prop_2_8_3 [label="定理8.3. 正値二次形式"]
-            a_prop_2_8_4 [label="定理8.4. 極値判定"]
+            a_prop_2_8_4 [label="定理8.4. 二次微分による極値判定"]
 
             a_problem_2_1_1 [label="§1問題1"]
             a_problem_2_2_1 [label="§2問題1"]
@@ -186,7 +186,9 @@ graph math {
         subgraph cluster_analysis_6 {
             label = "第6章 陰関数定理"
 
+            a_def_6_2_1 [label="§2定義1. ヤコビアン", shape=ellipse]
             a_def_6_2_2 [label="§2定義2. C^r級同相写像", shape=ellipse]
+            a_def_6_2_3 [label="§2定義3. 局所C^r級同相写像", shape=ellipse]
             a_def_6_4_1 [label="§4定義1. 径数付多様体", shape=ellipse]
             a_def_6_4_2 [label="§4定義2. 径数付多様体の同値", shape=ellipse]
             a_def_6_4_3 [label="§4定義3. 多様体", shape=ellipse]
@@ -196,8 +198,12 @@ graph math {
             a_prop_6_1_1 [label="定理1.1. 陰関数定理I"]
             a_prop_6_1_2 [label="定理1.2. 陰関数定理II"]
             a_prop_6_2_1 [label="定理2.1. 逆関数定理II"]
+            a_prop_6_2_2 [label="定理2.2. 局所C^r級同相写像のヤコビアン"]
+            a_prop_6_3_1 [label="定理3.1. 多様体上の極値点の必要条件"]
+            a_prop_6_3_1c1 [label="定理3.1.系1. ラグランジュの未定乗数法"]
 
             a_example_6_1_2 [label="§1例2 レムニスケート"]
+            a_example_6_3_1 [label="§3例1 デカルトの正葉線上での極値問題"]
 
             a_problem_6_1_2 [label="§1問題2"]
         }
@@ -408,8 +414,8 @@ graph math {
     l_problem_2_11 -- l_concept_2_c [style=dotted]
     l_problem_2_13 -- l_concept_2_c [style=dotted]
     l_prop_4_5_1 -- l_prop_2_4_2
-    l_example_4_6_6 -- a_concept_2_2_a
-    l_example_4_6_7 -- l_concept_4_c
+    l_example_4_6_6 -- a_concept_2_2_a [style=dotted]
+    l_example_4_6_7 -- l_concept_4_c [style=dotted]
     l_problem_4_8 -- l_concept_4_c [style=dotted]
     l_problem_4_11 -- l_concept_4_d [style=dotted]
 
@@ -438,7 +444,7 @@ graph math {
 
     a_problem_2_2_1 -- a_prop_2_1_5
 
-    a_axiom_1_1_17 -- a_example_1_1_6
+    a_axiom_1_1_17 -- a_example_1_1_6 [style=dotted]
     a_axiom_1_1_17 -- a_problem_1_3_7 [style=dotted]
     a_axiom_1_1_17 -- a_problem_1_3_8 [style=dotted]
 
@@ -475,10 +481,10 @@ graph math {
 
     a_prop_4_9_1 -- a_prop_4_3_3
     a_prop_4_3_3 -- a_prop_4_3_2
-    a_prop_4_9_1 -- a_example_4_8_4
+    a_prop_4_9_1 -- a_example_4_8_4 [style=dotted]
     a_prop_4_9_1 -- a_prop_4_3_1
 
-    a_prop_4_5_2 -- a_example_4_4_2
+    a_prop_4_5_2 -- a_example_4_4_2 [style=dotted]
 
     a_prop_4_9_2 -- a_prop_1_5_5
     a_prop_4_9_2 -- a_def_1_7_4
@@ -505,7 +511,7 @@ graph math {
     a_prop_4_16_1 -- a_prop_4_4_1
 
     a_def_4_16_4 -- a_def_4_16_3
-    a_prop_4_16_2 -- a_example_4_4_2
+    a_prop_4_16_2 -- a_example_4_4_2 [style=dotted]
     a_def_4_16_4 -- a_prop_4_16_2
     a_prop_4_16_2 -- a_prop_2_2_3
     a_prop_4_16_2 -- a_prop_2_6_9 [taillabel="有限増分の定理でも示せる"]
@@ -577,19 +583,19 @@ graph math {
 
     a_prop_4_8_1 -- a_prop_4_3_8
     a_prop_4_3_8 -- a_prop_4_3_3
-    a_prop_4_8_1 -- a_example_4_3_4
+    a_prop_4_8_1 -- a_example_4_3_4 [style=dotted]
 
     a_def_4_8_1 -- a_prop_4_8_1
 
-    a_example_4_9_3 -- a_example_4_2_2
-    a_example_4_9_3 -- a_prop_4_9_5
-    a_example_4_9_3 -- a_prop_4_9_2
+    a_example_4_9_3 -- a_example_4_2_2 [style=dotted]
+    a_example_4_9_3 -- a_prop_4_9_5 [style=dotted]
+    a_example_4_9_3 -- a_prop_4_9_2 [style=dotted]
     a_problem_4_8_1 -- a_example_4_2_2 [style=dotted]
 
-    a_example_4_9_6 -- a_prop_4_9_6
+    a_example_4_9_6 -- a_prop_4_9_6 [style=dotted]
     a_prop_4_9_6 -- a_prop_4_9_2
     a_prop_4_9_6 -- a_prop_1_7_4
-    a_example_4_9_6 -- a_example_4_4_2
+    a_example_4_9_6 -- a_example_4_4_2 [style=dotted]
 
     a_prop_4_9_7 -- a_prop_4_9_2
     a_prop_4_9_7 -- a_prop_4_9_6
@@ -624,16 +630,16 @@ graph math {
 
     lw_prop_2_7_9 -- a_prop_1_4_5
 
-    a_example_4_13_3 -- a_def_4_13_1
-    a_example_4_13_7 -- a_def_4_13_3
-    a_example_4_13_7 -- a_example_4_13_3 [taillabel="定義域を拡張"]
+    a_example_4_13_3 -- a_def_4_13_1 [style=dotted]
+    a_example_4_13_7 -- a_def_4_13_3 [style=dotted]
+    a_example_4_13_7 -- a_example_4_13_3 [taillabel="定義域を拡張"] [style=dotted]
 
     a_prop_4_13_3c2 -- a_def_4_13_3
     a_prop_4_13_3c2 -- a_prop_4_13_3 [taillabel="広義一様収束への拡張"]
 
     a_prop_4_13_4 -- a_prop_1_6_10
 
-    a_example_6_1_2 -- a_prop_6_1_1 [taillabel="証明の論法の具体的な適用"]
+    a_example_6_1_2 -- a_prop_6_1_1 [taillabel="証明の論法の具体的な適用"] [style=dotted]
 
     lw_problem_4_0_9 -- lw_prop_2_7_17
     lw_problem_4_0_9 -- lw_prop_2_7_18
@@ -659,7 +665,7 @@ graph math {
     a_prop_4_9_9 -- a_prop_4_9_8 [label="相異なる求積方法"]
     a_prop_4_9_8 -- a_prop_4_3_3
     a_prop_4_9_8 -- a_prop_4_9_1
-    a_prop_4_9_8 -- a_example_4_8_2
+    a_prop_4_9_8 -- a_example_4_8_2 [style=dotted]
     a_prop_4_9_8 -- a_prop_4_9_6
     a_prop_4_9_8 -- a_prop_4_9_7
     a_prop_4_9_8 -- a_prop_4_7_1
@@ -688,4 +694,15 @@ graph math {
     a_prop_4_14_4 -- a_prop_4_14_3
     a_prop_4_14_4 -- a_prop_4_5_3
     a_prop_4_14_4 -- a_prop_4_5_4
+
+    a_prop_6_2_2 -- a_def_6_2_3
+    a_prop_6_2_2 -- a_prop_2_6_6
+    a_prop_6_2_2 -- a_prop_6_2_1
+
+    a_prop_6_3_1c1 -- a_prop_6_3_1
+    a_prop_6_3_1 -- a_prop_6_1_2
+
+    a_prop_6_3_1c1 -- a_example_6_3_1 [style=dotted]
+    a_example_6_3_1 -- a_prop_2_8_4 [style=dotted]
+    a_example_6_3_1 -- a_concept_2_1_a [style=dotted]
 }

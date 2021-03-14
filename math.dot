@@ -23,15 +23,15 @@ graph math {
         subgraph cluster_analysis_1 {
             label = "第1章 実数と連続"
 
-            a_concept_1_7_a [label="コンパクト", shape=ellipse]
-            a_concept_1_7_b [label="点列コンパクト", shape=ellipse]
-
             a_axiom_1_1_17 [label="公理17. 連続の公理", shape=ellipse]
 
-            a_def_1_8_2 [label="定義2. 弧状連結", shape=ellipse]
+            a_def_1_7_1 [label="§7定義1. 点列コンパクト", shape=ellipse]
+            a_def_1_7_4 [label="§7定義4. コンパクト", shape=ellipse]
+            a_def_1_8_2 [label="§8定義2. 弧状連結", shape=ellipse]
 
             a_prop_1_2_1 [label="定理2.1. 数学的帰納法"]
             a_prop_1_2_2 [label="定理2.2. 自然数集合の最小元"]
+            a_prop_1_2_6 [label="定理2.6. 各項の大小関係と極限の大小関係"]
             a_prop_1_3_1 [label="定理3.1. 有界単調列の収束"]
             a_prop_1_3_2 [label="定理3.2. アルキメデス"]
             a_prop_1_3_3 [label="定理3.3. 区間縮小法"]
@@ -109,11 +109,13 @@ graph math {
             a_def_4_12_1 [label="§12定義1. Γ関数とB関数", shape=ellipse]
             a_def_4_13_1 [label="§13定義1. 関数列の一様収束", shape=ellipse]
             a_def_4_13_2 [label="§13定義2. 関数族の一様収束", shape=ellipse]
+            a_def_4_13_3 [label="§13定義3. 広義一様収束", shape=ellipse]
             a_def_4_16_1 [label="§16定義1. 径数付曲線", shape=ellipse]
             a_def_4_16_2 [label="§16定義2. 径数付曲線の同値", shape=ellipse]
             a_def_4_16_3 [label="§16定義3. 近似折線", shape=ellipse]
             a_def_4_16_4 [label="§16定義4. 変動量", shape=ellipse]
 
+            a_prop_4_2_6 [label="定理2.2. 積分の単調性"]
             a_prop_4_3_1 [label="命題3.1. 細分の性質"]
             a_prop_4_3_2 [label="定理3.2. ダルブーの定理"]
             a_prop_4_3_3 [label="定理3.3. 可積分条件"]
@@ -128,6 +130,9 @@ graph math {
             a_prop_4_5_4 [label="定理5.4. 微分積分学の基本定理II"]
             a_prop_4_5_6 [label="命題5.6. 変数変換公式"]
             a_prop_4_5_8 [label="<pl>定理5.8. 有限増分の定理II|<pr>C1級の場合", shape=record]
+            a_prop_4_7_1 [label="定理7.1. 直積集合と累次積分"]
+            a_prop_4_7_2 [label="定理7.2. 多重有界閉区間と累次積分"]
+            a_prop_4_7_3 [label="定理7.3. 連続関数と累次積分"]
             a_prop_4_8_1 [label="命題8.1. 有界集合上の積分の well-definedness"]
             a_prop_4_9_1 [label="命題9.1. 体積が0の集合"]
             a_prop_4_9_2 [label="命題9.2. 零集合の基本性質"]
@@ -136,6 +141,8 @@ graph math {
             a_prop_4_9_5 [label="定理9.5. ルベーグの可積分条件"]
             a_prop_4_9_6 [label="定理9.6. 体積確定性の境界による判定"]
             a_prop_4_9_7 [label="定理9.7. 可積分性と殆ど至る所での連続性"]
+            a_prop_4_9_8 [label="定理9.8. 微小柱による求積"]
+            a_prop_4_9_9 [label="定理9.9. 微小な水平断面による求積"]
             a_prop_4_10_1 [label="定理10.1. 平面極座標への変換公式"]
             a_prop_4_11_1 [label="命題11.1. コーシーの条件"]
             a_prop_4_11_2 [label="命題11.2. 優関数の方法"]
@@ -146,8 +153,19 @@ graph math {
             a_prop_4_12_4 [label="定理12.4. Γ関数とB関数の関係II"]
             a_prop_4_13_1 [label="命題13.1. 一様ノルムがノルムであること"]
             a_prop_4_13_2 [label="命題13.2. 一様収束ならば各点収束"]
-            a_prop_4_13_3 [label="定理13.3. 連続関数の極限関数も連続"]
+            a_prop_4_13_3 [label="定理13.3. 連続関数族の一様収束先も連続"]
             a_prop_4_13_3c1 [label="定理13.3.系1. 極限の交換"]
+            a_prop_4_13_3c2 [label="定理13.3.系2. 連続関数族の広義一様収束先も連続"]
+            a_prop_4_13_4 [label="定理13.4. 一様コーシー条件"]
+            a_prop_4_13_5 [label="定理13.5. ワイヤストラスのMテスト|<pr>級数の一様収束性判定", shape=record]
+            a_prop_4_13_6 [label="定理13.6. 項別積分定理|<pr>一様収束", shape=record]
+            a_prop_4_13_7 [label="定理13.7. 項別微分定理"]
+            a_prop_4_13_8 [label="定理13.8. ディニの定理"]
+            a_prop_4_13_9 [label="定理13.9. 項別積分定理|<pr>各点収束", shape=record]
+            a_prop_4_14_1 [label="定理14.1. 微分と積分の順序交換|<pr>通常の積分", shape=record]
+            a_prop_4_14_2 [label="定理14.2. 広義積分の一様収束性判定"]
+            a_prop_4_14_3 [label="定理14.3. 広義積分の順序交換"]
+            a_prop_4_14_4 [label="定理14.4. 微分と積分の順序交換|<pr>広義積分", shape=record]
             a_prop_4_16_1 [label="命題16.1. 弧長に関するダルブーの定理"]
             a_prop_4_16_2 [label="定理16.2. リプシッツ連続と有界変動"]
             a_prop_4_16_3 [label="定理16.3. 弧長の積分表式"]
@@ -155,9 +173,12 @@ graph math {
             a_example_4_2_2 [label="§2例2 ディリクレ関数", shape=ellipse]
             a_example_4_3_4 [label="§3例4 内部で0をとる関数の積分"]
             a_example_4_4_2 [label="§4例2 リプシッツ連続", shape=ellipse]
-            a_example_4_8_4 [label="§8例4 多重有界開区間の体積"]
+            a_example_4_8_2 [label="§8例2 超平面の体積は0"]
+            a_example_4_8_4 [label="§8例4 多重有界「開」区間の体積"]
             a_example_4_9_3 [label="§9例3 ディリクレ関数と零集合"]
             a_example_4_9_6 [label="§9例6 区分的C1級曲線で囲まれた図形の体積確定性"]
+            a_example_4_13_3 [label="§13例3 一様収束の例"]
+            a_example_4_13_7 [label="§13例7 広義一様収束の例"]
 
             a_problem_4_8_1 [label="§8問題1"]
         }
@@ -175,6 +196,8 @@ graph math {
             a_prop_6_1_1 [label="定理1.1. 陰関数定理I"]
             a_prop_6_1_2 [label="定理1.2. 陰関数定理II"]
             a_prop_6_2_1 [label="定理2.1. 逆関数定理II"]
+
+            a_example_6_1_2 [label="§1例2 レムニスケート"]
 
             a_problem_6_1_2 [label="§1問題2"]
         }
@@ -284,6 +307,8 @@ graph math {
             lw_prop_2_7_3 [label="命題2.7.2. 行列値関数の微分の基本性質"]
             lw_prop_2_7_8 [label="定理2.7.8. 行列の極限とノルムの極限"]
             lw_prop_2_7_9 [label="定理2.7.9. 完備性"]
+            lw_prop_2_7_17 [label="定理2.7.17. 行列の指数関数の微分"]
+            lw_prop_2_7_18 [label="定理2.7.18. 行列の指数関数の性質"]
         }
 
         subgraph cluster_linear_algebra_work_3 {
@@ -301,8 +326,8 @@ graph math {
             lw_problem_4_0_5 [label="章末5"]
             lw_problem_4_0_6 [label="章末6"]
             lw_problem_4_0_7 [label="章末7（広義固有空間の次元と重複度）"]
-            lw_problem_4_0_9 [label="章末9"]
-            lw_problem_4_0_10 [label="章末10"]
+            lw_problem_4_0_9 [label="章末9（斉次連立微分方程式）"]
+            lw_problem_4_0_10 [label="章末10（斉次微分方程式）"]
         }
 
         subgraph cluster_linear_algebra_work_5 {
@@ -325,7 +350,7 @@ graph math {
     a_concept_2_7_a -- l_concept_4_a
     a_problem_2_1_1 -- a_concept_2_1_a [style=dotted]
     a_prop_4_4_2 -- a_prop_4_4_1
-    a_prop_4_4_1 -- a_concept_1_7_a
+    a_prop_4_4_1 -- a_def_1_7_4
 
     l_problem_5_3 -- lw_prop_5_a [style=dotted]
     l_problem_5_4 -- l_prop_5_2_2 [style=dotted]
@@ -340,11 +365,11 @@ graph math {
     a_prop_2_2_13 -- a_prop_1_8_1
     a_prop_1_3_4 -- a_prop_1_3_2
     a_prop_1_3_4 -- a_prop_1_3_3 [label="項を無限に多く含む小区間"]
-    a_prop_1_7_2 -- a_concept_1_7_b
+    a_prop_1_7_2 -- a_def_1_7_1
     a_prop_1_7_2 -- a_prop_1_3_4
-    a_prop_1_7_3 -- a_concept_1_7_b
-    a_prop_1_7_4 -- a_concept_1_7_a
-    a_prop_1_7_4 -- a_concept_1_7_b
+    a_prop_1_7_3 -- a_def_1_7_1
+    a_prop_1_7_4 -- a_def_1_7_4
+    a_prop_1_7_4 -- a_def_1_7_1
     a_prop_1_7_4 -- a_prop_1_3_3 [label="被覆できない小区間"]
 
     a_prop_2_8_2 -- l_concept_5_a
@@ -456,7 +481,7 @@ graph math {
     a_prop_4_5_2 -- a_example_4_4_2
 
     a_prop_4_9_2 -- a_prop_1_5_5
-    a_prop_4_9_2 -- a_concept_1_7_a
+    a_prop_4_9_2 -- a_def_1_7_4
 
     a_problem_6_1_2 -- a_concept_2_1_a [style=dotted]
 
@@ -468,7 +493,7 @@ graph math {
     a_prop_4_9_5 -- a_prop_4_9_2
     a_prop_4_9_5 -- a_prop_4_9_1
     a_prop_4_9_5 -- a_prop_4_3_3
-    a_prop_4_9_5 -- a_concept_1_7_a
+    a_prop_4_9_5 -- a_def_1_7_4
 
     a_def_4_16_2 -- a_prop_3_4_2
     a_def_4_16_3 -- a_def_1_8_2
@@ -528,7 +553,6 @@ graph math {
 
     a_def_8_2_0 -- a_def_4_16_1
     a_def_8_2_1 -- a_def_8_2_0
-    a_def_8_2_1 -- a_def_4_16_3
     a_def_8_2_1 -- a_concept_2_7_a
     a_def_8_2_1 -- a_prop_4_5_6
 
@@ -599,4 +623,69 @@ graph math {
     a_prop_4_13_3c1 -- a_prop_4_13_3
 
     lw_prop_2_7_9 -- a_prop_1_4_5
+
+    a_example_4_13_3 -- a_def_4_13_1
+    a_example_4_13_7 -- a_def_4_13_3
+    a_example_4_13_7 -- a_example_4_13_3 [taillabel="定義域を拡張"]
+
+    a_prop_4_13_3c2 -- a_def_4_13_3
+    a_prop_4_13_3c2 -- a_prop_4_13_3 [taillabel="広義一様収束への拡張"]
+
+    a_prop_4_13_4 -- a_prop_1_6_10
+
+    a_example_6_1_2 -- a_prop_6_1_1 [taillabel="証明の論法の具体的な適用"]
+
+    lw_problem_4_0_9 -- lw_prop_2_7_17
+    lw_problem_4_0_9 -- lw_prop_2_7_18
+
+    a_prop_4_13_5 -- a_prop_4_13_4
+    a_prop_4_13_5 -- a_prop_4_13_4
+
+    a_prop_4_2_6 -- a_prop_1_2_6
+    a_prop_4_13_6 -- a_prop_4_3_5
+    a_prop_4_13_6 -- a_prop_4_2_6
+
+    a_prop_4_13_7 -- a_prop_4_5_3
+    a_prop_4_13_7 -- a_prop_4_13_3
+    a_prop_4_13_7 -- a_prop_4_13_2
+
+    a_prop_4_13_8 -- a_prop_4_13_3 [headlabel="逆の場合"]
+    a_prop_4_13_8 -- a_def_1_7_4
+    a_prop_4_13_9 -- a_prop_4_13_6
+
+    a_prop_4_14_1 -- a_prop_4_4_1
+    a_prop_4_14_1 -- a_prop_4_5_3
+
+    a_prop_4_9_9 -- a_prop_4_9_8 [label="相異なる求積方法"]
+    a_prop_4_9_8 -- a_prop_4_3_3
+    a_prop_4_9_8 -- a_prop_4_9_1
+    a_prop_4_9_8 -- a_example_4_8_2
+    a_prop_4_9_8 -- a_prop_4_9_6
+    a_prop_4_9_8 -- a_prop_4_9_7
+    a_prop_4_9_8 -- a_prop_4_7_1
+
+    a_prop_4_7_1 -- a_prop_4_3_8
+    a_prop_4_7_1 -- a_prop_4_3_3
+
+    a_prop_4_9_9 -- a_prop_4_9_7
+    a_prop_4_9_9 -- a_prop_4_7_1
+
+    a_prop_4_14_2 -- a_prop_4_13_5 [taillabel="広義積分に対して", headlabel="級数に対して"]
+    a_prop_4_14_2 -- a_prop_1_6_10
+    a_prop_4_14_2 -- a_prop_1_13_4
+
+    a_prop_4_7_2 -- a_prop_4_7_1
+    a_prop_4_7_3 -- a_prop_4_4_2
+    a_prop_4_7_3 -- a_prop_4_7_1 [taillabel="連続ならば自動的に仮定を満たす"]
+    a_prop_4_7_3 -- a_prop_4_7_2
+
+    a_prop_4_14_3 -- a_prop_4_14_1
+    a_prop_4_14_3 -- a_prop_4_13_3c2
+    a_prop_4_14_3 -- a_prop_4_7_3
+    a_prop_4_14_3 -- a_prop_4_13_6
+
+    a_prop_4_14_4 -- a_prop_4_14_1
+    a_prop_4_14_4 -- a_prop_4_14_3
+    a_prop_4_14_4 -- a_prop_4_5_3
+    a_prop_4_14_4 -- a_prop_4_5_4
 }

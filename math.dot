@@ -69,7 +69,7 @@ graph math {
             a_def_2_5_2 [label="§5定義2. 接超平面"]
 
             a_prop_2_1_5 [label="命題1.5. ライプニッツの公式"]
-            a_prop_2_2_1 [label="定理2.1. 極値と導関数"]
+            a_prop_2_2_1 [label="定理2.1. 極値点の必要条件"]
             a_prop_2_2_2 [label="定理2.2. ロルの定理"]
             a_prop_2_2_3 [label="定理2.3. 平均値の定理"]
             a_prop_2_2_4 [label="定理2.4. 定数関数の微分係数"]
@@ -84,7 +84,7 @@ graph math {
             a_prop_2_6_10 [label="定理6.10. 逆関数定理I"]
             a_prop_2_7_1 [label="命題7.1"]
             a_prop_2_7_2 [label="定理7.2. 多変数のテイラーの定理"]
-            a_prop_2_8_1 [label="定理8.1. 極値と導関数（多変数）"]
+            a_prop_2_8_1 [label="定理8.1. 極値点の必要条件（多変数）"]
             a_prop_2_8_2 [label="定理8.2. 二次形式"]
             a_prop_2_8_3 [label="定理8.3. 正値二次形式"]
             a_prop_2_8_4 [label="定理8.4. 二次微分による極値判定"]
@@ -658,7 +658,7 @@ graph math {
     a_prop_4_13_7 -- a_prop_4_13_3
     a_prop_4_13_7 -- a_prop_4_13_2
 
-    a_prop_4_13_8 -- a_prop_4_13_3 [headlabel="逆の場合"]
+    a_prop_4_13_8 -- a_prop_4_13_3 [taillabel="逆の場合"]
     a_prop_4_13_8 -- a_def_1_7_4
     a_prop_4_13_9 -- a_prop_4_13_6
 
@@ -711,4 +711,6 @@ graph math {
 
     lw_prop_5_3_6 -- lw_prop_5_3_1 [label="微分作用素とずらし変換が対応"]
     lw_prop_5_3_6 -- lw_example_3_2_14 [style=dotted]
+
+    a_prop_6_3_1 -- a_prop_2_8_1 [taillabel="境界上で候補を探す", headlabel="内部で候補を探す"]
 }

@@ -2,7 +2,8 @@
   <div id="app">
     <p v-if="loading">Now Loading...</p>
     <p v-if="!loading">
-      ドラッグで表示範囲の移動。ノードをクリックすると関連ノードがハイライトされます
+      Drag and move the graph.
+      Click a node and highlight adjacent nodes.
     </p>
 
     <div id="graph"></div>
@@ -19,7 +20,8 @@ export default {
 
   data () {
     return {
-      loading: true
+      loading: true,
+      engine: "dot"
     }
   },
 
@@ -38,6 +40,7 @@ export default {
     let dotSrc = dotSrcLines.join("\n");
 
     graphviz
+      .engine(this.engine)
       .renderDot(dotSrc)
       .on("end", () => {
         this.loading = false
@@ -83,39 +86,39 @@ export default {
           );
 
           // reset color
-          d3.selectAll(".node").selectAll("ellipse,polygon")
+          d3.selectAll(".node").selectAll("ellipse,polygon,polyline")
             .style("fill", "white")
             .style("stroke", "#ccc")
           d3.selectAll(".node").selectAll("text")
             .style("fill", "#ccc")
           d3.selectAll(".edge").selectAll("path")
             .style("stroke", "#ccc")
+          d3.selectAll(".edge").selectAll("text")
+            .style("fill", "#ccc")
 
           graphNodes[title].edges.forEach(edgeTitle => {
             const e = graphEdges[edgeTitle]
-
-            d3.select("#" + e.id).selectAll("path")
+            const edge = d3.select("#" + e.id)
+            
+            edge.selectAll("path")
               .style("stroke", "red")
-
-            const from = d3.select("#" + graphNodes[e.from].id)
-
-            from.selectAll("text")
+            edge.selectAll("text")
               .style("fill", "black")
-            from.selectAll("ellipse,polygon")
-              .style("fill", "#ff9f00")
-              .style("stroke", "black")
 
-            const to = d3.select("#" + graphNodes[e.to].id)
+            const fromto = d3.selectAll(
+              "#" + graphNodes[e.from].id
+              + ",#" + graphNodes[e.to].id
+            )
 
-            to.selectAll("text")
+            fromto.selectAll("text")
               .style("fill", "black")
-            to.selectAll("ellipse,polygon")
+            fromto.selectAll("ellipse,polygon,polyline")
               .style("fill", "#ff9f00")
               .style("stroke", "black")
           })
 
           // set color of this node
-          d3.select(this).selectAll("ellipse,polygon")
+          d3.select(this).selectAll("ellipse,polygon,polyline")
             .style("fill", "#cc0000")
         });
       });
@@ -130,11 +133,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 #graph {
-  border: 3px solid #ccc;
+  border: 5px solid #ccc;
   overflow: hidden;
+}
+
+.node {
+  cursor: pointer;
 }
 </style>

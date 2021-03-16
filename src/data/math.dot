@@ -1,6 +1,5 @@
 graph math {
     graph [
-        layout = dot
         splines = true
         rankdir = RL
         ranksep=2
@@ -12,7 +11,7 @@ graph math {
     ]
 
     subgraph cluster_analysis {
-        label = "解析入門"
+        label = "解析入門I, II（東京大学出版会）"
 
         subgraph cluster_analysis_ex1 {
             label = "附録1 集合"
@@ -66,7 +65,8 @@ graph math {
             a_concept_2_6_a [label="ヘッセ行列", shape=ellipse]
             a_concept_2_7_a [label="微分（differential）", shape=ellipse]
 
-            a_def_2_5_2 [label="§5定義2. 接超平面"]
+            a_def_2_4_3 [label="§4定義3. 漸近展開", shape=ellipse]
+            a_def_2_5_2 [label="§5定義2. 接超平面", shape=ellipse]
 
             a_prop_2_1_5 [label="命題1.5. ライプニッツの公式"]
             a_prop_2_2_1 [label="定理2.1. 極値点の必要条件"]
@@ -85,7 +85,7 @@ graph math {
             a_prop_2_7_1 [label="命題7.1"]
             a_prop_2_7_2 [label="定理7.2. 多変数のテイラーの定理"]
             a_prop_2_8_1 [label="定理8.1. 極値点の必要条件（多変数）"]
-            a_prop_2_8_2 [label="定理8.2. 二次形式"]
+            a_prop_2_8_2 [label="定理8.2. 二次形式の標準形の存在"]
             a_prop_2_8_3 [label="定理8.3. 正値二次形式"]
             a_prop_2_8_4 [label="定理8.4. 二次微分による極値判定"]
 
@@ -228,7 +228,7 @@ graph math {
     }
 
     subgraph cluster_linear_algebra {
-        label = "線型代数入門"
+        label = "線型代数入門（東京大学出版会）"
 
         #l_concept_0_a [label="行列の分解", shape=ellipse]
 
@@ -303,7 +303,7 @@ graph math {
     }
 
     subgraph cluster_linear_algebra_work {
-        label = "線型代数演習"
+        label = "線型代数演習（東京大学出版会）"
 
         subgraph cluster_linear_algebra_work_2 {
             label = "第2章 行列、一次方程式系"
@@ -718,4 +718,6 @@ graph math {
     a_prop_6_3_1 -- a_prop_2_8_1 [taillabel="境界上で候補を探す", headlabel="内部で候補を探す"]
 
     lw_prop_5_4_1 -- lw_def_5_4_1
+
+    a_prop_2_8_4 -- a_prop_2_8_1 [taillabel="極値点の十分条件として", headlabel="極値点の必要条件として"]
 }

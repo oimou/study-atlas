@@ -296,9 +296,9 @@ graph math {
             l_prop_5_4_2 [label="定理4.2. シルヴェスタの慣性法則"]
             l_prop_5_4_3 [label="定理4.3. 正値二次形式"]
 
-            l_problem_5_3 [label="問題3 冪零変換"]
-            l_problem_5_4 [label="問題4"]
-            l_problem_5_5 [label="問題5"]
+            l_problem_5_3 [label="問題3 Tが冪零⇔T^n=O"]
+            l_problem_5_4 [label="問題4 直交行列による同時対角化"]
+            l_problem_5_5 [label="問題5 実交代行列の固有値と階数"]
         }
     }
 
@@ -341,9 +341,12 @@ graph math {
         subgraph cluster_linear_algebra_work_5 {
             label = "第5章"
 
+            lw_def_5_4_1 [label="定義5.4.1. ジョルダン行列"]
+
             lw_prop_5_2_2 [label="定理5.2.2. 対角型線型変換"]
             lw_prop_5_3_1 [label="解説5.3.1. 斉次線型微分方程式について"]
             lw_prop_5_3_6 [label="解説5.3.6. 回帰数列について"]
+            lw_prop_5_4_1 [label="定理5.4.1. 冪零線型変換のジョルダン行列による表示"]
         }
 
         subgraph cluster_linear_algebra_work_6 {
@@ -713,4 +716,6 @@ graph math {
     lw_prop_5_3_6 -- lw_example_3_2_14 [style=dotted]
 
     a_prop_6_3_1 -- a_prop_2_8_1 [taillabel="境界上で候補を探す", headlabel="内部で候補を探す"]
+
+    lw_prop_5_4_1 -- lw_def_5_4_1
 }

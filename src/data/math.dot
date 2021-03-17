@@ -720,4 +720,6 @@ graph math {
     lw_prop_5_4_1 -- lw_def_5_4_1
 
     a_prop_2_8_4 -- a_prop_2_8_1 [taillabel="極値点の十分条件として", headlabel="極値点の必要条件として"]
+
+    a_prop_6_1_2 -- a_concept_2_7_a [label="陰関数の偏導関数を求めるには便利"]
 }

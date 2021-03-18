@@ -193,7 +193,14 @@ graph math {
             a_def_6_4_2 [label="§4定義2. 径数付多様体の同値", shape=ellipse]
             a_def_6_4_3 [label="§4定義3. 多様体", shape=ellipse]
             a_def_6_4_4 [label="§4定義4. 接ベクトル空間", shape=ellipse]
-            a_def_6_4_7 [label="§4定義7. 双対空間", shape=ellipse]
+            a_def_6_4_5 [label="§4定義5. 相対開集合", shape=ellipse]
+            a_def_6_4_6 [label="§4定義6. 局所座標での偏微分", shape=ellipse]
+            a_def_6_4_7 [label="§4定義7. 微分・双対空間", shape=ellipse]
+            a_def_6_5_1 [label="§5定義1. 実ベクトル空間の向き", shape=ellipse]
+            a_def_6_5_2 [label="§5定義2. 多様体の向き", shape=ellipse]
+            a_def_6_5_3 [label="§5定義3. ベクトル積", shape=ellipse]
+            a_def_6_5_4 [label="§5定義4. 法線ベクトル空間", shape=ellipse]
+            a_def_6_5_5 [label="§5定義5. 単位法線ベクトル場の向き", shape=ellipse]
 
             a_prop_6_1_1 [label="定理1.1. 陰関数定理I"]
             a_prop_6_1_2 [label="定理1.2. 陰関数定理II"]
@@ -201,9 +208,19 @@ graph math {
             a_prop_6_2_2 [label="定理2.2. 局所C^r級同相写像のヤコビアン"]
             a_prop_6_3_1 [label="定理3.1. 多様体上の極値点の必要条件"]
             a_prop_6_3_1c1 [label="定理3.1.系1. ラグランジュの未定乗数法"]
+            a_prop_6_4_1 [label="定理4.1. 零点集合が多様体である条件"]
+            a_prop_6_4_2 [label="定理4.2. n次元開近傍での同相写像の存在"]
+            a_prop_6_4_2c1 [label="定理4.2.系1. 座標系のn次元開近傍への拡張の存在"]
+            a_prop_6_4_3 [label="命題4.3. 跡が交わる局所径数"]
+            a_prop_6_4_4 [label="命題4.4. ふたつの局所座標での偏微分の関係"]
+            a_prop_6_4_5 [label="命題4.5. 微分の基本性質"]
+            a_prop_6_5_1 [label="命題5.1. 向きづけ可能性と局所座標系のヤコビアン"]
+            a_prop_6_5_2 [label="命題5.2. ベクトル積の基本性質"]
+            a_prop_6_5_3 [label="命題5.3. 向きづけ可能性と連続な単位法線ベクトル場の存在"]
 
             a_example_6_1_2 [label="§1例2 レムニスケート"]
             a_example_6_3_1 [label="§3例1 デカルトの正葉線上での極値問題"]
+            a_example_6_5_5 [label="§5例5 第一・第二基本形式"]
 
             a_problem_6_1_2 [label="§1問題2"]
         }
@@ -331,8 +348,9 @@ graph math {
             lw_concept_4_a [label="広義固有空間", shape=ellipse]
             lw_concept_4_b [label="微分方程式", shape=ellipse]
 
+            lw_problem_4_0_2 [label="章末2（a, Ta, ..., T^{m-1}a の線型独立性）"]
             lw_problem_4_0_5 [label="章末5"]
-            lw_problem_4_0_6 [label="章末6"]
+            lw_problem_4_0_6 [label="章末6（広義固有空間）"]
             lw_problem_4_0_7 [label="章末7（広義固有空間の次元と重複度）"]
             lw_problem_4_0_9 [label="章末9（斉次連立微分方程式）"]
             lw_problem_4_0_10 [label="章末10（斉次微分方程式）"]
@@ -346,13 +364,30 @@ graph math {
             lw_prop_5_2_2 [label="定理5.2.2. 対角型線型変換"]
             lw_prop_5_3_1 [label="解説5.3.1. 斉次線型微分方程式について"]
             lw_prop_5_3_6 [label="解説5.3.6. 回帰数列について"]
-            lw_prop_5_4_1 [label="定理5.4.1. 冪零線型変換のジョルダン行列による表示"]
+            lw_prop_5_4_2 [label="定理5.4.2. 冪零変換のジョルダン行列表示"]
+            lw_prop_5_4_3 [label="定理5.4.3. 冪零変換のジョルダン行列表示の一意性"]
+            lw_prop_5_4_4 [label="定理5.4.4. 広義固有空間の変換のジョルダン行列表示"]
+            lw_prop_5_4_5 [label="定理5.4.5. 線型変換のジョルダン行列表示"]
+            lw_prop_5_4_6 [label="定理5.4.6. 実線型変換のジョルダン行列表示"]
+            lw_prop_5_4_7 [label="定理5.4.7. ジョルダン標準形の存在|<pr>複素線型空間", shape=record]
+            lw_prop_5_4_8 [label="定理5.4.8. ジョルダン標準形の存在|<pr>実戦型空間", shape=record]
         }
 
         subgraph cluster_linear_algebra_work_6 {
             label = "第6章"
 
             lw_problem_6_0_9 [label="章末3"]
+        }
+    }
+
+    subgraph cluster_differential_geometry {
+        label = "曲線と曲面の微分幾何（裳華房）"
+
+        subgraph cluster_differential_geometry_2 {
+            label = "第2章 空間内の局面の小域的理論"
+
+            dg_def_2_2_1 [label="第一基本形式", shape=ellipse]
+            dg_def_2_2_2 [label="第二基本形式", shape=ellipse]
         }
     }
 
@@ -717,9 +752,64 @@ graph math {
 
     a_prop_6_3_1 -- a_prop_2_8_1 [taillabel="境界上で候補を探す", headlabel="内部で候補を探す"]
 
-    lw_prop_5_4_1 -- lw_def_5_4_1
+    lw_prop_5_4_2 -- lw_def_5_4_1
 
     a_prop_2_8_4 -- a_prop_2_8_1 [taillabel="極値点の十分条件として", headlabel="極値点の必要条件として"]
 
     a_prop_6_1_2 -- a_concept_2_7_a [label="陰関数の偏導関数を求めるには便利"]
+
+    lw_prop_5_4_2 -- lw_problem_4_0_2
+
+    lw_prop_5_4_3 -- lw_prop_5_4_2
+    lw_prop_5_4_4 -- lw_prop_5_4_3
+    lw_prop_5_4_4 -- lw_prop_5_4_2
+    lw_prop_5_4_5 -- lw_problem_4_0_6
+    lw_prop_5_4_5 -- lw_problem_4_0_7
+    lw_prop_5_4_5 -- lw_prop_5_4_4
+    lw_prop_5_4_6 -- lw_prop_5_4_5
+    lw_prop_5_4_7 -- lw_prop_5_4_5
+    lw_prop_5_4_8 -- lw_prop_5_4_6
+    lw_prop_5_4_8 -- lw_prop_5_4_7
+
+    a_prop_6_4_1 -- a_prop_6_1_2
+    a_prop_6_4_1 -- a_def_6_4_3
+
+    a_prop_6_4_2 -- a_prop_2_6_6
+    a_prop_6_4_2 -- a_prop_6_2_1
+    a_prop_6_4_2 -- a_prop_6_2_2
+
+    a_prop_6_4_2c1 -- a_prop_6_4_2
+
+    a_prop_6_4_3 -- a_prop_6_4_2c1
+
+    a_def_6_4_4 -- a_prop_6_4_3
+
+    a_prop_6_4_4 -- a_def_6_4_6
+    a_prop_6_4_4 -- a_prop_6_4_3
+    a_prop_6_4_4 -- a_prop_2_6_6
+
+    a_def_6_4_7 -- a_concept_2_7_a
+    a_def_6_4_7 -- a_prop_6_4_3
+
+    a_prop_6_4_5 -- a_def_6_4_7
+
+    a_def_6_5_2 -- a_def_6_4_4
+    a_def_6_5_2 -- a_def_6_5_1
+
+    a_prop_6_5_1 -- a_def_6_4_3
+    a_prop_6_5_1 -- a_def_6_5_2
+    a_prop_6_5_1 -- a_def_1_7_4 [taillabel="座標近傍族による被覆"]
+
+    a_prop_6_5_2 -- a_def_6_5_3
+
+    a_prop_6_5_3 -- a_def_6_5_4
+    a_prop_6_5_3 -- a_prop_6_5_2
+    a_prop_6_5_3 -- a_prop_6_5_1
+
+    a_def_6_5_5 -- a_def_6_5_2
+
+    a_example_6_5_5 -- a_def_6_5_4
+    a_example_6_5_5 -- a_prop_2_8_4
+    a_example_6_5_5 -- dg_def_2_2_1
+    a_example_6_5_5 -- dg_def_2_2_2
 }

@@ -1056,8 +1056,8 @@ graph math {
 
     a_def_8_4_1 -- a_def_6_5_4
     a_def_8_4_1 -- a_def_7_5_4
-    a_def_8_4_3 -- a_def_6_4_1
-    a_def_8_4_3 -- a_def_8_3_2
+    a_def_8_4_2 -- a_def_6_4_1
+    a_def_8_4_2 -- a_def_8_3_2
 
     a_example_8_1_3 -- a_example_8_1_2
     a_example_8_1_3 -- a_def_8_1_2

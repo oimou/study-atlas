@@ -978,7 +978,7 @@ graph math {
     a_prop_4_10_5 -- a_prop_4_7_1
 
     a_prop_7_1_5 -- a_prop_4_10_5
-    a_prop_7_1_5 -- a_prop_4_x12_9
+    a_prop_7_1_5 -- a_prop_4_eq12_9
     a_prop_7_1_5 -- a_prop_7_1_3
 
     a_prop_7_1_6 -- a_prop_7_1_5

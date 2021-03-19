@@ -229,6 +229,8 @@ graph math {
             a_prop_5_5_3 [label="命題5.3. 絶対収束ならば任意のF近似列で収束する"]
             a_prop_5_5_4 [label="定理5.4. 絶対収束二重級数の総和記号の順序交換"]
             a_prop_5_5_5 [label="定理5.5. 一列化の絶対収束"]
+
+            a_example_5_5_1 [label="§5例1 アイゼンシュタイン級数"]
         }
 
         subgraph cluster_analysis_6 {
@@ -281,6 +283,10 @@ graph math {
             a_def_7_1_3 [label="§1定義3. K近似列", shape=ellipse]
             a_def_7_1_4 [label="§1定義4. 径数に関する一様収束", shape=ellipse]
             a_def_7_3_1 [label="§3定義1. アフィン変換・合同変換", shape=ellipse]
+            a_def_7_5_1 [label="§5定義1. 曲面積", shape=ellipse]
+            a_def_7_5_2 [label="§5定義2. 面積分", shape=ellipse]
+            a_def_7_5_3 [label="§5定義3. 径数付多様体の体積", shape=ellipse]
+            a_def_7_5_4 [label="§5定義4. 多様体の体積", shape=ellipse]
 
             a_prop_7_1_1 [label="命題1.1. 部分集合上の積分の上限"]
             a_prop_7_1_2 [label="命題1.2. f, |f| の広義可積分性"]
@@ -293,20 +299,43 @@ graph math {
             a_prop_7_1_9 [label="命題1.9. 直積集合の体積、積分の順序交換"]
             a_prop_7_1_10 [label="定理1.10. 広義積分の順序交換"]
             a_prop_7_1_11 [label="定理1.11. 微分と積分の順序交換"]
+            a_prop_7_2_2 [label="定理2.2. 開被覆に属する有限な1のC^∞級分割の存在"]
+            a_prop_7_2_4 [label="定理2.4. 開被覆に属する1のC^∞級分割の存在"]
+            a_prop_7_3_7c1 [label="命題3.7.系1. k次元平行体の体積"]
+            a_prop_7_4_6 [label="定理4.6. 変数変換公式II|<pr>広義積分の場合"]
             a_prop_7_5_1 [label="命題5.1. ベクトル積の基本性質"]
             a_prop_7_5_2 [label="命題5.2. ベクトル積の幾何学的性質"]
+            a_prop_7_5_3 [label="命題5.3. 同値な曲面の曲面積"]
+            a_prop_7_5_4 [label="定理5.4. 曲面積および曲面上の曲線の長さの公式"]
         }
 
         subgraph cluster_analysis_8 {
             label = "第8章 ベクトル解析"
 
             a_def_8_1_2 [label="§1定義2. 回転", shape=ellipse]
-            a_def_8_2_0 [label="§2定義0. 向きのついた曲線", shape=ellipse]
+            a_def_8_2_0 [label="§2定義0. （区分的に）向きのついた曲線", shape=ellipse]
             a_def_8_2_1 [label="§2定義1. 線積分", shape=ellipse]
             a_def_8_2_2 [label="§2定義2. 1次元チェイン", shape=ellipse]
+            a_def_8_3_1 [label="§3定義1. 縦線集合・正の向きの境界", shape=ellipse]
+            a_def_8_3_2 [label="§3定義2. 区分的C^1級の境界を持つ有界領域", shape=ellipse]
+            a_def_8_3_3 [label="§3定義3. 滑らかな境界と外向き法ベクトル", shape=ellipse]
+            a_def_8_3_4 [label="§3定義4. 境界の片側", shape=ellipse]
+            a_def_8_3_5 [label="§3定義5. 法成分線積分", shape=ellipse]
+            a_def_8_4_1 [label="§4定義1. ベクトル場の面積分", shape=ellipse]
+            a_def_8_4_2 [label="§4定義2. 縁つき曲面", shape=ellipse]
 
             a_prop_8_2_1 [label="命題2.1. 線積分の線型性"]
             a_prop_8_2_2 [label="命題2.2. 合同変換による線積分の不変性"]
+            a_prop_8_3_1 [label="定理3.1. グリーンの定理I"]
+            a_prop_8_3_2 [label="定理3.2. 拡張された基本公式"]
+            a_prop_8_3_3 [label="定理3.3. グリーンの定理II"]
+            a_prop_8_3_4 [label="命題3.4. グリーンの定理IIIの補題"]
+            a_prop_8_3_5 [label="定理3.5. グリーンの定理III"]
+            a_prop_8_3_6 [label="定理3.6. 2次元のガウスの定理"]
+            a_prop_8_3_7 [label="命題3.7. 弧状連結集合に対する積分の第一平均値定理"]
+
+            a_example_8_1_2 [label="§1例2 勾配・ポテンシャル"]
+            a_example_8_1_3 [label="§1例3 発散"]
         }
     }
 
@@ -985,4 +1014,52 @@ graph math {
     a_prop_7_1_11 -- a_prop_4_5_3
 
     a_prop_7_5_2 -- a_prop_7_5_1
+
+    a_prop_7_5_3 -- a_def_7_5_1
+    a_prop_7_5_3 -- a_def_6_4_2
+    a_prop_7_5_3 -- a_prop_2_6_6
+    a_prop_7_5_3 -- a_prop_7_4_6
+
+    a_prop_7_5_4 -- a_prop_7_5_1
+    a_prop_7_5_4 -- a_prop_4_16_3
+    a_prop_7_5_4 -- a_example_6_5_5 [taillabel="第一基本量を用いる"]
+
+    a_def_7_5_2 -- a_def_7_5_1
+    a_def_7_5_3 -- a_prop_7_3_7c1
+    a_def_7_5_4 -- a_def_7_5_3
+    a_def_7_5_4 -- a_prop_7_2_4
+
+    a_def_8_3_1 -- a_def_8_2_2
+    a_prop_8_3_1 -- a_def_8_3_1
+    a_prop_8_3_1 -- a_prop_4_5_4
+
+    a_prop_8_3_2 -- a_prop_4_5_3 [taillabel="上下端が径数の関数の場合への拡張"]
+    a_prop_8_3_2 -- a_prop_4_14_1
+    a_prop_8_3_2 -- a_prop_2_6_6
+
+    a_prop_8_3_3 -- a_prop_8_3_1 [taillabel="一般の縦線領域への拡張"]
+    a_prop_8_3_3 -- a_prop_8_3_2
+    a_prop_8_3_3 -- a_prop_4_8_5
+
+    a_prop_8_3_4 -- a_def_8_3_2
+    a_prop_8_3_4 -- a_prop_8_3_3
+    a_prop_8_3_5 -- a_def_8_3_2
+    a_prop_8_3_5 -- a_prop_8_3_4
+    a_prop_8_3_5 -- a_prop_7_2_2
+
+    a_prop_7_2_4 -- a_prop_7_2_2 [taillabel="一般の集合", headlabel="コンパクト集合"]
+
+    a_prop_8_3_6 -- a_def_8_3_5
+    a_prop_8_3_6 -- a_prop_8_3_5
+    a_prop_8_3_7 -- a_def_1_8_2
+    a_prop_8_3_7 -- a_prop_1_8_1
+
+    a_def_8_4_1 -- a_def_6_5_4
+    a_def_8_4_1 -- a_def_7_5_4
+    a_def_8_4_3 -- a_def_6_4_1
+    a_def_8_4_3 -- a_def_8_3_2
+
+    a_example_8_1_3 -- a_example_8_1_2
+    a_example_8_1_3 -- a_def_8_1_2
+    a_example_8_1_2 -- a_def_8_1_2
 }

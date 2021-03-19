@@ -12,6 +12,7 @@ graph math {
 
     subgraph cluster_analysis {
         label = "解析入門I, II（東京大学出版会）"
+        fontsize = 30
 
         subgraph cluster_analysis_ex1 {
             label = "附録1 集合"
@@ -28,6 +29,7 @@ graph math {
             a_def_1_7_4 [label="§7定義4. コンパクト", shape=ellipse]
             a_def_1_8_2 [label="§8定義2. 弧状連結", shape=ellipse]
 
+            a_prop_1_1_6 [label="命題1.6. 集合上の上限・下限の性質"]
             a_prop_1_2_1 [label="定理2.1. 数学的帰納法"]
             a_prop_1_2_2 [label="定理2.2. 自然数集合の最小元"]
             a_prop_1_2_4 [label="命題2.4. 収束数列は有界"]
@@ -139,6 +141,9 @@ graph math {
             a_prop_4_7_2 [label="定理7.2. 多重有界閉区間と累次積分"]
             a_prop_4_7_3 [label="定理7.3. 連続関数と累次積分"]
             a_prop_4_8_1 [label="命題8.1. 有界集合上の積分の well-definedness"]
+            a_prop_4_8_2 [label="命題8.2. 部分集合上での可積分性"]
+            a_prop_4_8_4 [label="定理8.4. 体積0の有界集合上での可積分性"]
+            a_prop_4_8_5 [label="定理8.5. 積分範囲に関する加法性"]
             a_prop_4_9_1 [label="命題9.1. 体積が0の集合"]
             a_prop_4_9_2 [label="命題9.2. 零集合の基本性質"]
             a_prop_4_9_3 [label="命題9.3. 振幅の基本性質"]
@@ -146,9 +151,11 @@ graph math {
             a_prop_4_9_5 [label="定理9.5. ルベーグの可積分条件"]
             a_prop_4_9_6 [label="定理9.6. 体積確定性の境界による判定"]
             a_prop_4_9_7 [label="定理9.7. 可積分性と殆ど至る所での連続性"]
+            a_prop_4_9_7c1 [label="定理9.7.系1. 部分集合上での可積分性"]
             a_prop_4_9_8 [label="定理9.8. 微小柱による求積"]
             a_prop_4_9_9 [label="定理9.9. 微小な水平断面による求積"]
             a_prop_4_10_1 [label="定理10.1. 平面極座標への変換公式"]
+            a_prop_4_10_5 [label="定理10.5. n次元極座標への変換公式"]
             a_prop_4_11_1 [label="命題11.1. コーシーの条件"]
             a_prop_4_11_2 [label="命題11.2. 優関数の方法"]
             a_prop_4_11_3 [label="定理11.3. 次数による収束判定条件"]
@@ -156,6 +163,7 @@ graph math {
             a_prop_4_12_2 [label="定理12.2. Γ関数とB関数の基本性質"]
             a_prop_4_12_3 [label="定理12.3. Γ関数とB関数の関係I"]
             a_prop_4_12_4 [label="定理12.4. Γ関数とB関数の関係II"]
+            a_prop_4_eq12_9 [label="(12.9) n次元単位球面の表面積"]
             a_prop_4_13_1 [label="命題13.1. 一様ノルムがノルムであること"]
             a_prop_4_13_2 [label="命題13.2. 一様収束ならば各点収束"]
             a_prop_4_13_3 [label="定理13.3. 連続関数族の一様収束先も連続"]
@@ -195,6 +203,8 @@ graph math {
             a_def_5_3_1 [label="§3定義1 項の順序を変えた級数", shape=ellipse]
             a_def_5_5_1 [label="§5定義1 二重級数の部分和", shape=ellipse]
             a_def_5_5_2 [label="§5定義2 F近似列", shape=ellipse]
+            a_def_5_5_3 [label="§5定義3 二重級数の絶対収束", shape=ellipse]
+            a_def_5_5_4 [label="§5定義4 一列化", shape=ellipse]
 
             a_prop_5_1_1 [label="命題1.1. 補完数直線における上限の存在"]
             a_prop_5_1_2 [label="命題1.2. 補完数直線の単調点列の収束"]
@@ -214,6 +224,11 @@ graph math {
             a_prop_5_4_2 [label="定理4.2. アーベル"]
             a_prop_5_4_3 [label="定理4.3. 関数項級数の一様収束判定"]
             a_prop_5_4_4 [label="定理4.4. アーベルの定理"]
+            a_prop_5_5_1 [label="定理5.1. 二重級数の収束のF近似列による表現"]
+            a_prop_5_5_2 [label="命題5.2. 二重級数の総和記号の順序交換"]
+            a_prop_5_5_3 [label="命題5.3. 絶対収束ならば任意のF近似列で収束する"]
+            a_prop_5_5_4 [label="定理5.4. 絶対収束二重級数の総和記号の順序交換"]
+            a_prop_5_5_5 [label="定理5.5. 一列化の絶対収束"]
         }
 
         subgraph cluster_analysis_6 {
@@ -261,7 +276,25 @@ graph math {
         subgraph cluster_analysis_7 {
             label = "第7章 積分法（続き）"
 
+            a_def_7_1_1 [label="§1定義1. f≧0 の広義積分", shape=ellipse]
+            a_def_7_1_2 [label="§1定義2. f≧0 と限らない広義積分", shape=ellipse]
+            a_def_7_1_3 [label="§1定義3. K近似列", shape=ellipse]
+            a_def_7_1_4 [label="§1定義4. 径数に関する一様収束", shape=ellipse]
             a_def_7_3_1 [label="§3定義1. アフィン変換・合同変換", shape=ellipse]
+
+            a_prop_7_1_1 [label="命題1.1. 部分集合上の積分の上限"]
+            a_prop_7_1_2 [label="命題1.2. f, |f| の広義可積分性"]
+            a_prop_7_1_3 [label="定理1.3. 広義可積分性のK近似列による表現"]
+            a_prop_7_1_4 [label="命題1.4. 優関数の方法"]
+            a_prop_7_1_5 [label="定理1.5. 次数による収束判定法|<pr>被積分関数が非有界の場合", shape=record]
+            a_prop_7_1_6 [label="定理1.6. 次数による収束判定法|<pr>積分範囲が非有界の場合", shape=record]
+            a_prop_7_1_7 [label="定理1.7. 広義積分はR_0(A)の一次形式"]
+            a_prop_7_1_8 [label="定理1.8. 広義積分の収束性判定"]
+            a_prop_7_1_9 [label="命題1.9. 直積集合の体積、積分の順序交換"]
+            a_prop_7_1_10 [label="定理1.10. 広義積分の順序交換"]
+            a_prop_7_1_11 [label="定理1.11. 微分と積分の順序交換"]
+            a_prop_7_5_1 [label="命題5.1. ベクトル積の基本性質"]
+            a_prop_7_5_2 [label="命題5.2. ベクトル積の幾何学的性質"]
         }
 
         subgraph cluster_analysis_8 {
@@ -279,6 +312,7 @@ graph math {
 
     subgraph cluster_linear_algebra {
         label = "線型代数入門（東京大学出版会）"
+        fontsize = 30
 
         #l_concept_0_a [label="行列の分解", shape=ellipse]
 
@@ -354,6 +388,7 @@ graph math {
 
     subgraph cluster_linear_algebra_work {
         label = "線型代数演習（東京大学出版会）"
+        fontsize = 30
 
         subgraph cluster_linear_algebra_work_2 {
             label = "第2章 行列、一次方程式系"
@@ -415,6 +450,7 @@ graph math {
 
     subgraph cluster_differential_geometry {
         label = "曲線と曲面の微分幾何（裳華房）"
+        fontsize = 30
 
         subgraph cluster_differential_geometry_2 {
             label = "第2章 空間内の局面の小域的理論"
@@ -883,4 +919,70 @@ graph math {
     a_prop_5_4_3 -- a_prop_5_4_2
     a_prop_5_4_3 -- a_prop_4_13_4
     a_prop_5_4_4 -- a_prop_5_4_3
+
+    a_prop_5_5_1 -- a_def_5_5_2
+    a_prop_5_5_3 -- a_prop_5_5_1
+    a_prop_5_5_4 -- a_prop_5_5_2
+    a_prop_5_5_4 -- a_prop_5_5_3
+    a_prop_5_5_5 -- a_prop_5_5_3
+
+    a_prop_7_1_1 -- a_prop_4_9_7
+    a_prop_7_1_1 -- a_prop_4_3_2
+    a_prop_7_1_1 -- a_prop_5_3_2
+
+    a_def_7_1_1 -- a_prop_7_1_1
+    a_def_7_1_2 -- a_def_7_1_1
+    a_def_7_1_2 -- a_def_5_5_3
+
+    a_prop_5_5_3 -- a_def_5_5_3
+
+    a_prop_7_1_2 -- a_def_7_1_2
+    a_prop_7_1_3 -- a_def_7_1_3
+
+    a_prop_7_1_4 -- a_def_7_1_1
+    a_prop_7_1_4 -- a_prop_7_1_2
+    a_prop_7_1_4 -- a_prop_4_11_2 [taillabel="n次元への一般化"]
+
+    a_prop_7_1_5 -- a_prop_4_11_3 [taillabel="n次元への一般化"]
+
+    a_prop_4_10_5 -- a_prop_4_10_1
+    a_prop_4_10_5 -- a_prop_4_7_1
+
+    a_prop_7_1_5 -- a_prop_4_10_5
+    a_prop_7_1_5 -- a_prop_4_x12_9
+    a_prop_7_1_5 -- a_prop_7_1_3
+
+    a_prop_7_1_6 -- a_prop_7_1_5
+    a_prop_7_1_6 -- a_prop_4_9_7
+
+    a_prop_7_1_2 -- a_prop_1_1_6
+    a_prop_7_1_7 -- a_prop_1_1_6
+    a_prop_7_1_7 -- a_prop_4_8_5
+
+    a_prop_4_8_5 -- a_prop_4_8_2
+    a_prop_4_8_5 -- a_prop_4_8_4
+    a_prop_4_8_2 -- a_prop_4_3_6
+    a_prop_4_8_2 -- a_def_4_8_1
+
+    a_prop_4_9_7c1 -- a_prop_4_8_2 [label="別証明"]
+
+    a_prop_7_1_8 -- a_prop_4_14_2 [taillabel="n次元への一般化"]
+    a_prop_7_1_8 -- a_prop_7_1_4
+
+    a_prop_7_1_9 -- a_prop_4_3_6
+    a_prop_7_1_9 -- a_prop_4_8_5
+    a_prop_7_1_9 -- a_prop_4_7_1
+
+    a_prop_7_1_10 -- a_prop_4_14_3 [taillabel="n次元への一般化"]
+    a_prop_7_1_10 -- a_prop_4_14_1
+    a_prop_7_1_10 -- a_prop_4_13_3
+    a_prop_7_1_10 -- a_prop_4_13_6
+    a_prop_7_1_10 -- a_prop_7_1_3
+    a_prop_7_1_10 -- a_prop_7_1_3
+
+    a_prop_7_1_11 -- a_prop_4_14_4 [taillabel="n次元への一般化"]
+    a_prop_7_1_11 -- a_prop_7_1_10
+    a_prop_7_1_11 -- a_prop_4_5_3
+
+    a_prop_7_5_2 -- a_prop_7_5_1
 }

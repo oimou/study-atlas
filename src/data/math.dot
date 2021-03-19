@@ -316,13 +316,15 @@ graph math {
             a_def_8_2_0 [label="§2定義0. （区分的に）向きのついた曲線", shape=ellipse]
             a_def_8_2_1 [label="§2定義1. 線積分", shape=ellipse]
             a_def_8_2_2 [label="§2定義2. 1次元チェイン", shape=ellipse]
-            a_def_8_3_1 [label="§3定義1. 縦線集合・正の向きの境界", shape=ellipse]
+            a_def_8_3_1 [label="§3定義1. R^2の縦線集合・向きのついた境界", shape=ellipse]
             a_def_8_3_2 [label="§3定義2. 区分的C^1級の境界を持つ有界領域", shape=ellipse]
             a_def_8_3_3 [label="§3定義3. 滑らかな境界と外向き法ベクトル", shape=ellipse]
             a_def_8_3_4 [label="§3定義4. 境界の片側", shape=ellipse]
             a_def_8_3_5 [label="§3定義5. 法成分線積分", shape=ellipse]
             a_def_8_4_1 [label="§4定義1. ベクトル場の面積分", shape=ellipse]
             a_def_8_4_2 [label="§4定義2. 縁つき曲面", shape=ellipse]
+            a_def_8_4_3 [label="§4定義3. 引き戻し", shape=ellipse]
+            a_def_8_5_1 [label="§5定義1. R^3の縦線集合・向きのついた境界", shape=ellipse]
 
             a_prop_8_2_1 [label="命題2.1. 線積分の線型性"]
             a_prop_8_2_2 [label="命題2.2. 合同変換による線積分の不変性"]
@@ -333,6 +335,10 @@ graph math {
             a_prop_8_3_5 [label="定理3.5. グリーンの定理III"]
             a_prop_8_3_6 [label="定理3.6. 2次元のガウスの定理"]
             a_prop_8_3_7 [label="命題3.7. 弧状連結集合に対する積分の第一平均値定理"]
+            a_prop_8_4_1 [label="命題4.1. 引き戻しの存在"]
+            a_prop_8_4_2 [label="命題4.2. 引き戻しの基本性質"]
+            a_prop_8_4_3 [label="定理4.3. ストークスの定理"]
+            a_prop_8_5_1 [label="定理5.1. ガウスの定理I"]
 
             a_example_8_1_2 [label="§1例2 勾配・ポテンシャル"]
             a_example_8_1_3 [label="§1例3 発散"]
@@ -1062,4 +1068,24 @@ graph math {
     a_example_8_1_3 -- a_example_8_1_2
     a_example_8_1_3 -- a_def_8_1_2
     a_example_8_1_2 -- a_def_8_1_2
+
+    a_prop_8_4_1 -- a_def_8_4_3
+    a_prop_8_4_2 -- a_prop_8_4_1
+    a_prop_8_4_2 -- a_def_8_4_3
+
+    a_prop_8_4_3 -- a_def_8_4_1
+    a_prop_8_4_3 -- a_def_8_4_2
+    a_prop_8_4_3 -- a_def_8_4_3
+    a_prop_8_4_3 -- a_prop_8_3_5
+    a_prop_8_4_3 -- a_prop_8_4_2
+
+    a_def_8_5_1 -- a_def_8_3_1
+    a_def_8_5_1 -- a_def_8_3_3
+    a_def_8_5_1 -- a_def_6_5_5 [taillabel="外向き法ベクトル(§3定義3)が正の向き(VI§5定義5)\nとなるような向き(VI§5定義2)を定めた曲面を考える"]
+
+    a_prop_8_5_1 -- a_def_8_5_1
+    a_prop_8_5_1 -- a_prop_4_5_3
+    a_prop_8_5_1 -- a_prop_4_5_4
+    a_prop_8_5_1 -- a_prop_4_9_8
+    a_prop_8_5_1 -- a_prop_8_3_2
 }

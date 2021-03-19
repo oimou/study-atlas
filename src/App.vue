@@ -41,6 +41,9 @@ export default {
 
     graphviz
       .engine(this.engine)
+      .width("100%")
+      .height("100%")
+      .fit(true)
       .renderDot(dotSrc)
       .on("end", () => {
         this.loading = false
@@ -120,6 +123,8 @@ export default {
           // set color of this node
           d3.select(this).selectAll("ellipse,polygon,polyline")
             .style("fill", "#cc0000")
+          d3.select(this).selectAll("text")
+              .style("fill", "black")
         });
       });
   }

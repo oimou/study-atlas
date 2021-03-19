@@ -30,6 +30,7 @@ graph math {
 
             a_prop_1_2_1 [label="定理2.1. 数学的帰納法"]
             a_prop_1_2_2 [label="定理2.2. 自然数集合の最小元"]
+            a_prop_1_2_4 [label="命題2.4. 収束数列は有界"]
             a_prop_1_2_6 [label="定理2.6. 各項の大小関係と極限の大小関係"]
             a_prop_1_3_1 [label="定理3.1. 有界単調列の収束"]
             a_prop_1_3_2 [label="定理3.2. アルキメデス"]
@@ -39,7 +40,11 @@ graph math {
             a_prop_1_3_6 [label="定理3.6. コーシーの収束条件"]
             a_prop_1_3_7 [label="定理3.7. 床関数の存在|※「自然数p,q」→「整数p,q」？", shape=record]
             a_prop_1_4_5 [label="定理4.5. 点列に関するコーシーの条件"]
+            a_prop_1_5_3 [label="命題5.3. 和と定数倍の収束"]
+            a_prop_1_5_4 [label="定理5.4. 正項級数の収束判定条件"]
             a_prop_1_5_5 [label="定理5.5. 比較定理"]
+            a_prop_1_5_6 [label="定理5.6. ratio/root test の補題"]
+            a_prop_1_5_7 [label="定理5.7. ratio test"]
             a_prop_1_6_2 [label="定理6.2. 関数の収束の点列による表現"]
             a_prop_1_6_8 [label="定理6.8. ベクトル値関数とその成分の極限"]
             a_prop_1_6_10 [label="定理6.10. 関数に関するコーシーの条件"]
@@ -181,6 +186,34 @@ graph math {
             a_example_4_13_7 [label="§13例7 広義一様収束の例"]
 
             a_problem_4_8_1 [label="§8問題1"]
+        }
+
+        subgraph cluster_analysis_5 {
+            label = "第5章 級数"
+
+            a_def_5_1_4 [label="§1定義4 上極限・下極限", shape=ellipse]
+            a_def_5_3_1 [label="§3定義1 項の順序を変えた級数", shape=ellipse]
+            a_def_5_5_1 [label="§5定義1 二重級数の部分和", shape=ellipse]
+            a_def_5_5_2 [label="§5定義2 F近似列", shape=ellipse]
+
+            a_prop_5_1_1 [label="命題1.1. 補完数直線における上限の存在"]
+            a_prop_5_1_2 [label="命題1.2. 補完数直線の単調点列の収束"]
+            a_prop_5_1_3 [label="命題1.3. 実数列の補完数直線上の点への収束"]
+            a_prop_5_1_4 [label="定理1.4. 上極限の言い換え"]
+            a_prop_5_1_5 [label="命題1.5. 実数列の収束の上極限・下極限による表現"]
+            a_prop_5_2_1 [label="定理2.1. ratio test"]
+            a_prop_5_2_2 [label="定理2.2. root test"]
+            a_prop_5_2_3 [label="定理2.3. コーシー・アダマールの定理"]
+            a_prop_5_2_4 [label="定理2.4. オイラー・マクローリンの判定法"]
+            a_prop_5_2_5 [label="定理2.5. Σ1/n^s の収束範囲"]
+            a_prop_5_3_1 [label="命題3.1. 絶対収束の言い換え"]
+            a_prop_5_3_2 [label="命題3.2. 正項級数の項の順序の変更"]
+            a_prop_5_3_3 [label="定理3.3. 絶対収束級数の項の順序の変更"]
+            a_prop_5_3_4 [label="定理3.4. ディリクレ"]
+            a_prop_5_4_1 [label="定理4.1. 交代級数の収束の十分条件"]
+            a_prop_5_4_2 [label="定理4.2. アーベル"]
+            a_prop_5_4_3 [label="定理4.3. 関数項級数の一様収束判定"]
+            a_prop_5_4_4 [label="定理4.4. アーベルの定理"]
         }
 
         subgraph cluster_analysis_6 {
@@ -812,4 +845,42 @@ graph math {
     a_example_6_5_5 -- a_prop_2_8_4
     a_example_6_5_5 -- dg_def_2_2_1
     a_example_6_5_5 -- dg_def_2_2_2
+
+    a_prop_5_1_1 -- a_axiom_1_1_17
+    a_prop_5_1_3 -- a_prop_1_3_4
+
+    a_def_5_1_4 -- a_prop_5_1_2
+    a_prop_5_1_4 -- a_def_5_1_4
+    a_prop_5_1_4 -- a_prop_5_1_3
+    a_prop_5_1_5 -- a_prop_5_1_4
+
+    a_prop_5_2_1 -- a_prop_5_1_4
+    a_prop_5_2_1 -- a_prop_1_5_6
+
+    a_prop_1_5_7 -- a_prop_1_5_6
+    a_prop_1_5_6 -- a_prop_1_5_5
+
+    a_prop_5_2_2 -- a_prop_1_5_6
+    a_prop_5_2_2 -- a_prop_5_1_4
+    a_prop_5_2_3 -- a_prop_5_2_2
+
+    a_prop_1_5_4 -- a_prop_1_3_1
+    a_prop_1_5_4 -- a_prop_1_2_4
+
+    a_prop_5_2_4 -- a_prop_1_5_4
+    a_prop_5_2_5 -- a_prop_5_2_4
+
+    a_prop_5_3_1 -- a_prop_1_5_3
+    a_prop_5_3_1 -- a_prop_1_5_5
+
+    a_prop_5_3_2 -- a_def_5_3_1
+    a_prop_5_3_3 -- a_def_5_3_1
+    a_prop_5_3_3 -- a_prop_5_3_1
+    a_prop_5_3_3 -- a_prop_5_3_2
+    a_prop_5_3_4 -- a_def_5_3_1
+
+    a_prop_5_4_2 -- a_prop_1_3_6
+    a_prop_5_4_3 -- a_prop_5_4_2
+    a_prop_5_4_3 -- a_prop_4_13_4
+    a_prop_5_4_4 -- a_prop_5_4_3
 }

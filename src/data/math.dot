@@ -1088,4 +1088,5 @@ graph math {
     a_prop_8_5_1 -- a_prop_4_5_4
     a_prop_8_5_1 -- a_prop_4_9_8
     a_prop_8_5_1 -- a_prop_8_3_2
+    a_prop_8_5_1 -- a_prop_8_3_6
 }

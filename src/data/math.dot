@@ -1294,4 +1294,7 @@ graph math {
     a_prop_7_2_2 -- a_def_7_2_3
     a_prop_7_2_2 -- a_prop_7_2_1
     a_prop_7_2_2 -- a_def_7_2_4
+
+    a_prop_2_2_14 -- a_prop_1_3_1
+    a_prop_2_2_14 -- a_prop_1_2_6
 }

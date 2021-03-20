@@ -4,10 +4,17 @@ graph math {
         rankdir = RL
         ranksep=2
         overlap=false
+        fontname = "Migu 1M"
     ]
 
     node [
         shape = box
+        fontname = "Migu 1M"
+        margin = 0.1
+    ]
+
+    edge [
+        fontname = "Migu 1M"
     ]
 
     subgraph cluster_analysis {
@@ -27,6 +34,7 @@ graph math {
 
             a_def_1_7_1 [label="§7定義1. 点列コンパクト", shape=ellipse]
             a_def_1_7_4 [label="§7定義4. コンパクト", shape=ellipse]
+            a_def_1_8_1 [label="§8定義2. 連結・領域", shape=ellipse]
             a_def_1_8_2 [label="§8定義2. 弧状連結", shape=ellipse]
 
             a_prop_1_1_6 [label="命題1.6. 集合上の上限・下限の性質"]
@@ -55,8 +63,10 @@ graph math {
             a_prop_1_7_3 [label="定理7.3. 最大値の定理"]
             a_prop_1_7_4 [label="定理7.4. ハイネ・ボレル"]
             a_prop_1_8_1 [label="定理8.1. 中間値の定理"]
+            a_prop_1_8_2 [label="定理8.2. 連結性の言い換え"]
 
             a_example_1_1_6 [label="§1例6 平方根の存在"]
+            a_example_1_8_2 [label="§8例2 凸集合・星形集合"]
 
             a_remark_1_1_4 [label="§1注意4 実数の連続性", shape=ellipse]
 
@@ -122,7 +132,8 @@ graph math {
             a_def_4_16_3 [label="§16定義3. 近似折線", shape=ellipse]
             a_def_4_16_4 [label="§16定義4. 変動量", shape=ellipse]
 
-            a_prop_4_2_6 [label="定理2.2. 積分の単調性"]
+            a_prop_4_2_2 [label="定理2.2. 積分の単調性"]
+            a_prop_4_2_3 [label="定理2.3. 積分の第一平均値定理"]
             a_prop_4_3_1 [label="命題3.1. 細分の性質"]
             a_prop_4_3_2 [label="定理3.2. ダルブーの定理"]
             a_prop_4_3_3 [label="定理3.3. 可積分条件"]
@@ -329,7 +340,12 @@ graph math {
             a_def_8_4_2 [label="§4定義2. 縁つき曲面", shape=ellipse]
             a_def_8_4_3 [label="§4定義3. 引き戻し", shape=ellipse]
             a_def_8_5_1 [label="§5定義1. R^3の縦線集合・向きのついた境界", shape=ellipse]
+            a_def_8_5_2 [label="§5定義2. C^1級の境界", shape=ellipse]
+            a_def_8_6_1 [label="§6定義1. 連続可変（ホモトープ）・変形写像（ホモトピー）", shape=ellipse]
+            a_def_8_6_2 [label="§6定義2. 単連結", shape=ellipse]
+            a_def_8_6_3 [label="§6定義3. ベクトル・ポテンシャル", shape=ellipse]
 
+            a_prop_8_1_1 [label="命題1.1. grad, div, rot, ラプラス作用素"]
             a_prop_8_2_1 [label="命題2.1. 線積分の線型性"]
             a_prop_8_2_2 [label="命題2.2. 合同変換による線積分の不変性"]
             a_prop_8_3_1 [label="定理3.1. グリーンの定理I"]
@@ -343,9 +359,25 @@ graph math {
             a_prop_8_4_2 [label="命題4.2. 引き戻しの基本性質"]
             a_prop_8_4_3 [label="定理4.3. ストークスの定理"]
             a_prop_8_5_1 [label="定理5.1. ガウスの定理I"]
+            a_prop_8_5_1c1 [label="定理5.1.系1. ガウスの定理Iの系"]
+            a_prop_8_5_3 [label="定理5.3. ガウスの定理II"]
+            a_prop_8_6_1 [label="定理6.1. スカラー・ポテンシャルの存在|<pr>積分による表現", shape=record]
+            a_prop_8_6_2 [label="定理6.2. ポアンカレの定理"]
+            a_prop_8_6_3 [label="定理6.3. ホモトープな曲線上の線積分の一致"]
+            a_prop_8_6_4 [label="定理6.4. スカラー・ポテンシャルの存在|<pr>微分による表現", shape=record]
+            a_prop_8_6_5 [label="定理6.5. ベクトル・ポテンシャルの存在|<pr>微分による表現", shape=record]
+            a_prop_8_6_6 [label="定理6.6. ベクトル・ポテンシャルの存在|<pr>積分による表現", shape=record]
 
             a_example_8_1_2 [label="§1例2 勾配・ポテンシャル"]
             a_example_8_1_3 [label="§1例3 発散"]
+            a_example_8_2_2 [label="§2例2 保存力場"]
+            a_example_8_6_1 [label="§6例1 rotF=0がポテンシャルの存在に十分でない例"]
+        }
+
+        subgraph cluster_analysis_9 {
+            label = "第9章 複素解析"
+
+            a_def_9_14_2 [label="§14定義2. 基本領域"]
         }
     }
 
@@ -495,6 +527,7 @@ graph math {
         subgraph cluster_differential_geometry_2 {
             label = "第2章 空間内の局面の小域的理論"
 
+            dg_def_1_3_1 [label="回転数", shape=ellipse]
             dg_def_2_2_1 [label="第一基本形式", shape=ellipse]
             dg_def_2_2_2 [label="第二基本形式", shape=ellipse]
         }
@@ -918,9 +951,9 @@ graph math {
     a_prop_4_13_5 -- a_prop_4_13_4
     a_prop_4_13_5 -- a_prop_4_13_4
 
-    a_prop_4_2_6 -- a_prop_1_2_6
+    a_prop_4_2_2 -- a_prop_1_2_6
     a_prop_4_13_6 -- a_prop_4_3_5
-    a_prop_4_13_6 -- a_prop_4_2_6
+    a_prop_4_13_6 -- a_prop_4_2_2
 
     a_prop_4_13_7 -- a_prop_4_5_3
     a_prop_4_13_7 -- a_prop_4_13_3
@@ -1297,4 +1330,59 @@ graph math {
 
     a_prop_2_2_14 -- a_prop_1_3_1
     a_prop_2_2_14 -- a_prop_1_2_6
+
+    ode_prop_5_12 -- a_example_8_2_2
+
+    a_prop_8_5_1c1 -- a_prop_8_5_1 [taillabel="底集合も縦線集合とした"]
+    a_prop_8_5_1c1 -- a_prop_8_3_2
+
+    a_def_8_5_2 -- a_def_8_3_3
+
+    a_prop_8_6_1 -- a_prop_4_5_4
+    a_prop_8_6_1 -- a_def_8_2_1
+    a_prop_8_6_1 -- a_prop_1_8_2
+    a_prop_8_6_1 -- a_prop_4_2_3
+
+    a_prop_1_8_2 -- a_def_1_8_1
+    a_prop_1_8_2 -- a_def_1_8_2
+
+    a_prop_4_2_3 -- a_prop_4_2_2
+    a_prop_4_2_3 -- a_prop_1_8_1
+
+    a_example_8_6_1 -- a_prop_8_6_1 [taillabel="領域に穴が空いている"]
+
+    a_example_1_8_2 -- a_def_1_8_2
+
+    a_prop_8_6_2 -- a_example_1_8_2
+    a_prop_8_6_2 -- a_prop_8_6_1
+    a_prop_8_6_2 -- a_prop_8_1_1
+
+    a_def_8_6_1 -- dg_def_1_3_1 [label="連続的な変形"]
+
+    a_prop_8_6_3 -- a_def_8_6_1
+    a_prop_8_6_3 -- a_prop_4_9_4 [label="集合と点の距離は連続"]
+    a_prop_8_6_3 -- a_prop_4_4_1
+    a_prop_8_6_3 -- a_prop_8_6_2
+    a_prop_8_6_3 -- a_example_1_8_2
+
+    a_def_8_6_2 -- a_def_1_8_2
+
+    a_prop_8_6_4 -- a_prop_8_6_1
+    a_prop_8_6_4 -- a_prop_8_6_3
+    a_prop_8_6_4 -- a_prop_8_1_1
+
+    a_def_8_6_3 -- a_prop_8_1_1
+
+    a_prop_8_6_5 -- a_prop_8_6_4
+    a_prop_8_6_5 -- a_prop_8_1_1
+
+    a_prop_8_6_6 -- a_prop_8_6_1
+    a_prop_8_6_6 -- a_prop_8_5_3
+    a_prop_8_6_6 -- a_prop_8_3_7
+
+    a_prop_8_3_7 -- a_prop_4_2_3 [taillabel="弧状連結集合", headlabel="有界閉区間"]
+
+    a_def_9_14_2 -- a_def_1_8_1 [taillabel="開集合ではない", headlabel="領域は連結開集合"]
+
+    a_prop_8_5_3 -- a_prop_8_5_1
 }

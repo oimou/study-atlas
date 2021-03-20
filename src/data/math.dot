@@ -282,6 +282,9 @@ graph math {
             a_def_7_1_2 [label="§1定義2. f≧0 と限らない広義積分", shape=ellipse]
             a_def_7_1_3 [label="§1定義3. K近似列", shape=ellipse]
             a_def_7_1_4 [label="§1定義4. 径数に関する一様収束", shape=ellipse]
+            a_def_7_2_1 [label="§2定義1. 台", shape=ellipse]
+            a_def_7_2_3 [label="§2定義3. 1の分割", shape=ellipse]
+            a_def_7_2_4 [label="§2定義4. 細かい被覆", shape=ellipse]
             a_def_7_3_1 [label="§3定義1. アフィン変換・合同変換", shape=ellipse]
             a_def_7_5_1 [label="§5定義1. 曲面積", shape=ellipse]
             a_def_7_5_2 [label="§5定義2. 面積分", shape=ellipse]
@@ -299,6 +302,7 @@ graph math {
             a_prop_7_1_9 [label="命題1.9. 直積集合の体積、積分の順序交換"]
             a_prop_7_1_10 [label="定理1.10. 広義積分の順序交換"]
             a_prop_7_1_11 [label="定理1.11. 微分と積分の順序交換"]
+            a_prop_7_2_1 [label="命題2.1. 1の分割のための補題"]
             a_prop_7_2_2 [label="定理2.2. 開被覆に属する有限な1のC^∞級分割の存在"]
             a_prop_7_2_4 [label="定理2.4. 開被覆に属する1のC^∞級分割の存在"]
             a_prop_7_3_7c1 [label="命題3.7.系1. k次元平行体の体積"]
@@ -441,6 +445,7 @@ graph math {
             label = "第3章 線型空間と線型写像"
 
             lw_prop_3_4_7 [label="定理3.4.7. 行列の三角化"]
+            lw_prop_3_4_10 [label="定理3.4.10. ハミルトン-ケイリー"]
 
             lw_example_3_2_14 [label="例3.2.14. ヴァンデルモンドの行列式"]
         }
@@ -492,6 +497,127 @@ graph math {
 
             dg_def_2_2_1 [label="第一基本形式", shape=ellipse]
             dg_def_2_2_2 [label="第二基本形式", shape=ellipse]
+        }
+    }
+
+    subgraph cluster_ode {
+        label = "常微分方程式論（朝倉書店）"
+        fontsize = 30
+
+        subgraph cluster_ode_1 {
+            label = "第1章 微分方程式の基礎"
+
+            ode_prop_1_1 [label="例題1.1. 直線族の微分方程式"]
+            ode_prop_1_2 [label="例題1.2. 放物線族の微分方程式"]
+            ode_prop_1_3 [label="例題1.3. 初期値問題"]
+            ode_prop_1_4 [label="例題1.4. ディリクレ型境界値問題"]
+            ode_prop_1_5 [label="定理1.5. コーシーの定理"]
+            ode_prop_1_6 [label="例題1.6. 非正規形微分方程式の特異解"]
+        }
+
+        subgraph cluster_ode_2 {
+            label = "第2章 初等解法"
+
+            ode_prop_2_1 [label="例題2.1. 変数分離形"]
+            ode_prop_2_2 [label="例題2.2. 同次形"]
+            ode_prop_2_3 [label="例題2.3. 多項式の分数の形"]
+            ode_prop_2_4 [label="例題2.4. x,yの比で決まる形"]
+            ode_prop_2_5 [label="例題2.5. 定数変化法"]
+            ode_prop_2_6 [label="例題2.6. 変数変換（ベルヌーイの微分方程式）"]
+            ode_prop_2_7 [label="例題2.7. 変数変換（リッカチの微分方程式）"]
+            ode_prop_2_8 [label="定理2.8. 全微分方程式が完全形であるための条件"]
+            ode_prop_2_9 [label="例題2.9. 正規形微分方程式の全微分形"]
+            ode_prop_2_10 [label="例題2.10. 積分因子"]
+            ode_prop_2_11 [label="例題2.11. 非正規形（ダランベールの微分方程式）|<pr>p=y'とおきパラメータとみる", shape=record]
+            ode_prop_2_12 [label="例題2.12. 非正規形（クレローの微分方程式）"]
+            ode_prop_2_13 [label="例題2.13. 非正規形（xまたはyを陽に含まない場合）"]
+            ode_prop_2_14 [label="例題2.14. 高階（yを陽に含まない場合）"]
+            ode_prop_2_15 [label="例題2.15. 高階（xを陽に含まない場合）|<pr>yを独立変数とみる", shape=record]
+            ode_prop_2_16 [label="例題2.16. 高階（同次形）"]
+            ode_prop_2_17 [label="例題2.17. 高階（積分因子；リュウビルの微分方程式）"]
+        }
+
+        subgraph cluster_ode_3 {
+            label = "第3章 同次2階定数係数線型微分方程式"
+
+            ode_prop_3_1 [label="例題3.1. 微分作用素"]
+            ode_prop_3_2 [label="定理3.2. 同次2階の一般解"]
+            ode_prop_3_3 [label="例題3.3. 同次2階（実単解のみ）"]
+            ode_prop_3_4 [label="例題3.4. 同次2階（虚解あり）"]
+            ode_prop_3_5 [label="例題3.5. 同次2階（重解あり）"]
+            ode_prop_3_6 [label="定理3.6. 高階同次の一般解"]
+            ode_prop_3_7 [label="例題3.7. 微分作用素の関係式"]
+            ode_prop_3_8 [label="例題3.8. 高階同次"]
+            ode_prop_3_9 [label="例題3.9. 非同次2階（非同次項が定数）"]
+            ode_prop_3_10 [label="例題3.10. 非同次2階（非同次項がe^{3x}）"]
+            ode_prop_3_11 [label="例題3.11. 非同次2階（非同次項がx）"]
+            ode_prop_3_12 [label="例題3.12. 非同次2階（非同次項がx^2）"]
+            ode_prop_3_13 [label="命題3.13. 行列の指数関数の基本性質"]
+            ode_prop_3_14 [label="定理3.14. 行列の指数関数を用いた初期値問題の解"]
+            ode_prop_3_15 [label="例題3.15. 初期値問題"]
+            ode_prop_3_16 [label="命題3.16. 射影行列の基本性質"]
+            ode_prop_3_17 [label="定理3.17. ケーリー・ハミルトンの定理"]
+            ode_prop_3_18 [label="例題3.18. 射影行列による行列指数関数の計算I"]
+            ode_prop_3_19 [label="例題3.19. 射影行列による行列指数関数の計算II"]
+            ode_prop_3_20 [label="例題3.20. 射影行列による行列指数関数の計算III"]
+        }
+
+        subgraph cluster_ode_4 {
+            label = "第4章 変数係数線型微分方程式"
+
+            ode_prop_4_1 [label="例題4.1. 1階の項を含まない形への変形"]
+            ode_prop_4_2 [label="例題4.2. 2階変数係数（オイラーの方程式）"]
+            ode_prop_4_3 [label="命題4.3. 線型従属ならばロンスキアン=0"]
+            ode_prop_4_4 [label="定理4.4. 基本解ならばロンスキアン≠0"]
+            ode_prop_4_5 [label="例題4.5. グリーンの公式"]
+            ode_prop_4_6 [label="定理4.6. ストゥルムの分離定理"]
+            ode_prop_4_7 [label="定理4.7. ストゥルムの比較定理"]
+            ode_prop_4_8 [label="例題4.8. 非自明解が無限個の正の零点を持つこと"]
+            ode_prop_4_9 [label="定理4.9. SL型固有値問題の固有値・固有関数の性質"]
+            ode_prop_4_10 [label="例題4.10. SL型固有値問題"]
+            ode_prop_4_11 [label="定理4.11. 固有関数の直交性"]
+            ode_prop_4_12 [label="定理4.12. 固有関数の零点は分離しあう"]
+            ode_prop_4_13 [label="例題4.13. SL型固有値問題の性質の確認"]
+            ode_prop_4_14 [label="定理4.14. (py')'+qy=h 型非同次方程式の一般解"]
+            ode_prop_4_15 [label="例題4.15. 非同次方程式"]
+            ode_prop_4_16 [label="命題4.16. グリーン関数の基本性質"]
+            ode_prop_4_17 [label="定理4.17. 非同次境界値問題の一般解"]
+            ode_prop_4_18 [label="例題4.18. グリーン関数の構成"]
+            ode_prop_4_19 [label="定理4.19. 非同次境界値問題の解の存在条件"]
+            ode_prop_4_20 [label="例題4.20. 非同次境界値問題"]
+        }
+
+        subgraph cluster_ode_5 {
+            label = "第5章 力学系"
+
+            ode_prop_5_1 [label="例題5.1. 微分方程式の解軌道"]
+            ode_prop_5_2 [label="定理5.2. 自律系の解の性質"]
+            ode_prop_5_3 [label="例題5.3. 力学系の性質を用いた行列指数関数の性質の証明"]
+            ode_prop_5_4 [label="定理5.4. 2つの解軌道は共有点を持つならば等しい"]
+            ode_prop_5_5 [label="例題5.5. 平衡点"]
+            ode_prop_5_6 [label="例題5.6. 初期値と軌道"]
+            ode_prop_5_7 [label="命題5.7. 自身と交わるならば平衡点または周期軌道"]
+            ode_prop_5_8 [label="例題5.8. 勾配系"]
+            ode_prop_5_9 [label="例題5.9. 勾配系の解とWの広義単調減少性"]
+            ode_prop_5_10 [label="定理5.10. 勾配系の平衡点集合への収束"]
+            ode_prop_5_11 [label="例題5.11. 勾配系の解の挙動"]
+            ode_prop_5_12 [label="命題5.12. 全エネルギー保存"]
+            ode_prop_5_13 [label="定理5.13. ハミルトン系の全エネルギー保存"]
+            ode_prop_5_14 [label="例題5.14. ハミルトン系の解の挙動"]
+            ode_prop_5_15 [label="例題5.15. 線形化方程式"]
+            ode_prop_5_16 [label="定理5.16. 行列指数関数の発散と固有値の関係"]
+            ode_prop_5_17 [label="定理5.17. 線形化行列の固有値と自律系の解の収束"]
+            ode_prop_5_18 [label="定理5.18. 線形化行列の固有値と自律系の平衡点の漸近安定"]
+            ode_prop_5_19 [label="例題5.19. 平衡点の類別"]
+            ode_prop_5_20 [label="例題5.20. 線形化方程式の初期値問題"]
+            ode_prop_5_21 [label="例題5.21. 周期解に関する線形化方程式"]
+            ode_prop_5_22 [label="命題5.22. 線形化方程式の解の基本行列による表示"]
+            ode_prop_5_23 [label="定理5.23. フロケ乗数と軌道安定性"]
+            ode_prop_5_24 [label="例題5.24. フロケ乗数と周期解の安定性"]
+            ode_prop_5_25 [label="例題5.25. 初期値問題の近似解I"]
+            ode_prop_5_26 [label="例題5.26. 初期値問題の近似解II"]
+            ode_prop_5_27 [label="例題5.27. 速い運動と遅い運動の挙動"]
+            ode_prop_5_28 [label="例題5.28. ファン・デア・ポールの方程式の遅い運動"]
         }
     }
 
@@ -1089,4 +1215,83 @@ graph math {
     a_prop_8_5_1 -- a_prop_4_9_8
     a_prop_8_5_1 -- a_prop_8_3_2
     a_prop_8_5_1 -- a_prop_8_3_6
+
+    ode_prop_2_3 -- ode_prop_2_1
+    ode_prop_2_3 -- ode_prop_2_2
+    ode_prop_2_4 -- ode_prop_2_1
+    ode_prop_2_4 -- ode_prop_2_2
+    ode_prop_2_6 -- ode_prop_2_5
+    ode_prop_2_7 -- ode_prop_2_5
+    ode_prop_2_9 -- ode_prop_2_8
+    ode_prop_2_10 -- ode_prop_2_9
+    ode_prop_2_14 -- ode_prop_2_1
+    ode_prop_2_16 -- ode_prop_2_1
+    ode_prop_2_17 -- ode_prop_2_1
+    ode_prop_2_17 -- ode_prop_2_10
+
+    ode_prop_3_2 -- ode_prop_3_1
+    ode_prop_3_3 -- ode_prop_3_2
+    ode_prop_3_4 -- ode_prop_3_2
+    ode_prop_3_5 -- ode_prop_3_2
+    ode_prop_3_8 -- ode_prop_3_6
+    ode_prop_3_9 -- ode_prop_3_2
+    ode_prop_3_10 -- ode_prop_3_2
+    ode_prop_3_11 -- ode_prop_3_2
+    ode_prop_3_12 -- ode_prop_3_2
+    ode_prop_3_15 -- ode_prop_3_14
+
+    ode_prop_3_16 -- ode_prop_3_17
+    ode_prop_3_18 -- ode_prop_3_16
+    ode_prop_3_19 -- ode_prop_3_16
+    ode_prop_3_20 -- ode_prop_3_16
+
+    ode_prop_4_2 -- ode_prop_4_1
+    ode_prop_4_4 -- ode_prop_4_3
+    ode_prop_4_5 -- ode_prop_4_1
+    ode_prop_4_7 -- ode_prop_4_6
+    ode_prop_4_8 -- ode_prop_4_7
+    ode_prop_4_10 -- ode_prop_4_9
+    ode_prop_4_12 -- ode_prop_4_7
+    ode_prop_4_12 -- ode_prop_4_9
+    ode_prop_4_13 -- ode_prop_4_9
+    ode_prop_4_13 -- ode_prop_4_10
+    ode_prop_4_13 -- ode_prop_4_11
+    ode_prop_4_13 -- ode_prop_4_12
+    ode_prop_4_14 -- ode_prop_2_5
+    ode_prop_4_15 -- ode_prop_4_14
+    ode_prop_4_15 -- ode_prop_2_5
+    ode_prop_4_15 -- ode_prop_3_4
+    ode_prop_4_17 -- ode_prop_4_16
+    ode_prop_4_18 -- ode_prop_4_16
+    ode_prop_4_20 -- ode_prop_4_19
+    ode_prop_4_20 -- ode_prop_4_15
+
+    ode_prop_5_1 -- ode_prop_3_2
+    ode_prop_5_3 -- ode_prop_5_2
+    ode_prop_5_3 -- ode_prop_3_13
+    ode_prop_5_6 -- ode_prop_5_5
+    ode_prop_5_9 -- ode_prop_5_8
+    ode_prop_5_13 -- ode_prop_5_12
+    ode_prop_5_18 -- ode_prop_5_17
+    ode_prop_5_16 -- ode_prop_5_15
+    ode_prop_5_17 -- ode_prop_5_15
+    ode_prop_5_18 -- ode_prop_5_15
+    ode_prop_5_19 -- ode_prop_5_15
+    ode_prop_5_20 -- ode_prop_5_15
+    ode_prop_5_23 -- ode_prop_5_22
+    ode_prop_5_24 -- ode_prop_5_23
+    ode_prop_5_24 -- ode_prop_5_21
+    ode_prop_5_26 -- ode_prop_5_25
+
+    ode_prop_3_13 -- lw_prop_2_7_18
+    ode_prop_1_5 -- a_example_4_4_2
+
+    lw_prop_3_4_10 -- lw_prop_3_4_7
+    lw_prop_3_4_10 -- ode_prop_3_17
+
+    a_prop_7_2_1 -- a_def_7_2_1
+    a_prop_7_2_2 -- a_def_7_2_1
+    a_prop_7_2_2 -- a_def_7_2_3
+    a_prop_7_2_2 -- a_prop_7_2_1
+    a_prop_7_2_2 -- a_def_7_2_4
 }

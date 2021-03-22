@@ -60,6 +60,7 @@ graph math {
             a_prop_1_6_1 [label="命題6.1. 閉包の基本性質"]
             a_prop_1_6_2 [label="定理6.2. 関数の収束の点列による表現"]
             a_prop_1_6_5 [label="命題6.5. 連続性の言い換え"]
+            a_prop_1_6_6 [label="定理6.6. 和・定数倍と極限との交換"]
             a_prop_1_6_8 [label="定理6.8. ベクトル値関数とその成分の極限"]
             a_prop_1_6_10 [label="定理6.10. 関数に関するコーシーの条件"]
             a_prop_1_7_1 [label="命題7.1. 閉集合と開集合の基本性質"]
@@ -86,9 +87,13 @@ graph math {
             a_concept_2_6_a [label="ヘッセ行列", shape=ellipse]
             a_concept_2_7_a [label="微分（differential）", shape=ellipse]
 
+            a_def_2_1_1 [label="§1定義1. 微分可能", shape=ellipse]
             a_def_2_4_3 [label="§4定義3. 漸近展開", shape=ellipse]
             a_def_2_5_2 [label="§5定義2. 接超平面", shape=ellipse]
 
+            a_prop_2_1_1 [label="命題1.1. ベクトル値関数とその成分関数の微分"]
+            a_prop_2_1_2 [label="命題1.2. 微分可能ならば連続"]
+            a_prop_2_1_3 [label="命題1.3. 微分の基本性質"]
             a_prop_2_1_5 [label="命題1.5. ライプニッツの公式"]
             a_prop_2_2_1 [label="定理2.1. 極値点の必要条件"]
             a_prop_2_2_2 [label="定理2.2. ロルの定理"]
@@ -119,6 +124,12 @@ graph math {
         subgraph cluster_analysis_3 {
             label = "第3章 初等関数"
 
+            a_def_3_1_1 [label="§1定義1. 複素微分可能", shape=ellipse]
+
+            a_prop_3_1_1 [label="定理1.1. コーシー・リーマンの方程式"]
+            a_prop_3_1_2 [label="命題1.2. 複素微分の基本性質"]
+            a_prop_3_1_3 [label="定理1.3. 複素微分の連鎖律"]
+            a_prop_3_1_4 [label="命題1.4. 領域でf'(z)=0ならば定数"]
             a_prop_3_3_4 [label="定理3.4. 代数学の基本定理"]
             a_prop_3_4_2 [label="定理4.2. 単調関数と全単射"]
         }
@@ -539,12 +550,25 @@ graph math {
         label = "曲線と曲面の微分幾何（裳華房）"
         fontsize = 30
 
-        subgraph cluster_differential_geometry_2 {
-            label = "第2章 空間内の局面の小域的理論"
+        subgraph cluster_differential_geometry_1 {
+            label = "第1章 平面上の曲線、空間内の曲線"
 
             dg_def_1_3_1 [label="回転数", shape=ellipse]
+        }
+
+        subgraph cluster_differential_geometry_2 {
+            label = "第2章 空間内の曲面の小域的理論"
+
             dg_def_2_2_1 [label="第一基本形式", shape=ellipse]
             dg_def_2_2_2 [label="第二基本形式", shape=ellipse]
+        }
+
+        subgraph cluster_differential_geometry_3 {
+            label = "第3章 曲面上の幾何"
+
+            dg_def_3_3_1 [label="接ベクトル", shape=ellipse]
+
+            dg_problem_3_2_1 [label="問2.1. コーシー・リーマン方程式"]
         }
     }
 
@@ -1432,7 +1456,7 @@ graph math {
 
     a_prop_6_2_8 -- a_prop_6_2_7 [label="逆の主張"]
     a_prop_6_2_8 -- a_def_6_2_4
-    a_prop_6_2_8 -- a_prop_6_1_2
+    a_prop_6_2_8 -- a_prop_6_1_2 [taillabel="「方程式が解ける」という使い方"]
     a_prop_6_2_8 -- a_concept_2_7_a
     a_prop_6_2_8 -- a_prop_2_6_9c1
 
@@ -1442,4 +1466,28 @@ graph math {
     a_prop_6_2_7 -- a_prop_6_4_1 [headlabel="定理2.7によりl<nがいえる"]
 
     a_prop_6_4_2 -- a_def_6_4_3 
+
+    a_prop_3_1_1 -- a_def_3_1_1
+    a_prop_3_1_1 -- dg_problem_3_2_1
+    dg_def_3_3_1 -- a_def_6_4_4 [taillabel="微分作用素を接ベクトルとみる"]
+    dg_def_3_3_1 -- a_def_6_4_7 [taillabel="接ベクトル場と1次微分形式が双対空間をなす"]
+
+    a_prop_3_1_2 -- a_def_3_1_1
+    a_prop_3_1_2 -- a_prop_2_1_3
+
+    a_prop_2_1_3 -- a_def_2_1_1
+    a_prop_2_1_3 -- a_prop_1_6_6
+    a_prop_2_1_3 -- a_prop_2_1_1
+    a_prop_2_1_3 -- a_prop_2_1_2
+    a_prop_2_1_1 -- a_prop_1_6_8
+    a_prop_1_6_8 -- a_prop_1_6_2
+
+    a_def_3_1_1 -- a_def_2_1_1 [label="RでもCでも同様の定義"]
+
+    a_prop_3_1_3 -- a_prop_2_6_6
+    a_prop_3_1_3 -- a_prop_3_1_1
+    a_prop_3_1_3 -- a_def_3_1_1
+
+    a_prop_3_1_4 -- a_def_3_1_1
+    a_prop_3_1_4 -- a_prop_2_6_9c1
 }

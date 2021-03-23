@@ -17,6 +17,22 @@ graph math {
         fontname = "Migu 1M"
     ]
 
+    subgraph cluster_analysis_work {
+        label = "解析演習（東京大学出版会）"
+        fontsize = 30
+
+        node [
+            shape = ellipse
+        ]
+
+        subgraph cluster_analysis_work_3 {
+            label = "第3章 積分法I（一変数）"
+
+            aw_problem_3_3 [label="例題3.3. リーマン・ルベーグの定理"]
+            aw_problem_5_2 [label="例題5.2. ディリクレ積分"]
+        }
+    }
+
     subgraph cluster_analysis {
         label = "解析入門I, II（東京大学出版会）"
         fontsize = 30
@@ -137,6 +153,8 @@ graph math {
         subgraph cluster_analysis_4 {
             label = "第4章 積分法"
 
+            a_def_4_5_2 [label="§5定義2. 不定積分", shape=ellipse]
+            a_def_4_5_3 [label="§5定義3. 原始関数", shape=ellipse]
             a_def_4_8_1 [label="§8定義1. 有界集合上の積分", shape=ellipse]
             a_def_4_8_2 [label="§8定義2. 体積確定", shape=ellipse]
             a_def_4_12_1 [label="§12定義1. Γ関数とB関数", shape=ellipse]
@@ -179,7 +197,7 @@ graph math {
             a_prop_4_9_6 [label="定理9.6. 体積確定性の境界による判定"]
             a_prop_4_9_7 [label="定理9.7. 可積分性と殆ど至る所での連続性"]
             a_prop_4_9_7c1 [label="定理9.7.系1. 部分集合上での可積分性"]
-            a_prop_4_9_8 [label="定理9.8. 微小柱による求積"]
+            a_prop_4_9_8 [label="定理9.8. 縦線集合の微小柱による求積"]
             a_prop_4_9_9 [label="定理9.9. 微小な水平断面による求積"]
             a_prop_4_10_1 [label="定理10.1. 平面極座標への変換公式"]
             a_prop_4_10_5 [label="定理10.5. n次元極座標への変換公式"]
@@ -497,6 +515,10 @@ graph math {
             lw_prop_2_7_9 [label="定理2.7.9. 完備性"]
             lw_prop_2_7_17 [label="定理2.7.17. 行列の指数関数の微分"]
             lw_prop_2_7_18 [label="定理2.7.18. 行列の指数関数の性質"]
+
+            lw_example_2_2_11 [label="例題2.2.11. (i,i)成分が0の上三角行列の積"]
+
+            lw_problem_2_0_25 [label="章末25. 一般逆行列"]
         }
 
         subgraph cluster_linear_algebra_work_3 {
@@ -505,7 +527,7 @@ graph math {
             lw_prop_3_4_7 [label="定理3.4.7. 行列の三角化"]
             lw_prop_3_4_10 [label="定理3.4.10. ハミルトン-ケイリー"]
 
-            lw_example_3_2_14 [label="例3.2.14. ヴァンデルモンドの行列式"]
+            lw_example_3_2_14 [label="例題3.2.14. ヴァンデルモンドの行列式"]
         }
 
         subgraph cluster_linear_algebra_work_4 {
@@ -514,12 +536,12 @@ graph math {
             lw_concept_4_a [label="広義固有空間", shape=ellipse]
             lw_concept_4_b [label="微分方程式", shape=ellipse]
 
-            lw_problem_4_0_2 [label="章末2（a, Ta, ..., T^{m-1}a の線型独立性）"]
+            lw_problem_4_0_2 [label="章末2. a, Ta, ..., T^{m-1}a の線型独立性"]
             lw_problem_4_0_5 [label="章末5"]
-            lw_problem_4_0_6 [label="章末6（広義固有空間）"]
-            lw_problem_4_0_7 [label="章末7（広義固有空間の次元と重複度）"]
-            lw_problem_4_0_9 [label="章末9（斉次連立微分方程式）"]
-            lw_problem_4_0_10 [label="章末10（斉次微分方程式）"]
+            lw_problem_4_0_6 [label="章末6 広義固有空間"]
+            lw_problem_4_0_7 [label="章末7 広義固有空間の次元と重複度"]
+            lw_problem_4_0_9 [label="章末9 斉次連立微分方程式"]
+            lw_problem_4_0_10 [label="章末10. 斉次微分方程式）"]
         }
 
         subgraph cluster_linear_algebra_work_5 {
@@ -1490,4 +1512,17 @@ graph math {
 
     a_prop_3_1_4 -- a_def_3_1_1
     a_prop_3_1_4 -- a_prop_2_6_9c1
+
+    lw_prop_3_4_10 -- lw_example_2_2_11
+
+    aw_problem_5_2 -- aw_problem_3_3 [style=dotted]
+
+    a_prop_8_3_1 -- a_prop_4_9_8
+    a_prop_8_3_1 -- a_def_8_2_1
+    a_prop_8_3_1 -- a_def_8_2_2
+    a_prop_8_3_1 -- a_prop_8_2_1
+
+    a_def_4_5_3 -- a_def_4_5_2
+    a_prop_4_5_3 -- a_def_4_5_3
+    a_prop_4_5_4 -- a_def_4_5_3
 }

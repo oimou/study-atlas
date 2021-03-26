@@ -1,9 +1,8 @@
-graph math {
+graph calculus {
     graph [
+        layout = dot
         splines = true
         rankdir = RL
-        ranksep=2
-        overlap=false
         fontname = "Migu 1M"
     ]
 
@@ -54,6 +53,7 @@ graph math {
 
             a_axiom_1_1_17 [label="公理17. 連続の公理", shape=ellipse]
 
+            a_def_1_5_0 [label="§5定義0. 級数", shape=ellipse]
             a_def_1_6_1 [label="§6定義1. 触点・閉包・点列", shape=ellipse]
             a_def_1_7_1 [label="§7定義1. 点列コンパクト", shape=ellipse]
             a_def_1_7_2 [label="§7定義2. 閉集合", shape=ellipse]
@@ -75,17 +75,22 @@ graph math {
             a_prop_1_3_6 [label="定理3.6. コーシーの収束条件"]
             a_prop_1_3_7 [label="定理3.7. 床関数の存在|※「自然数p,q」→「整数p,q」？", shape=record]
             a_prop_1_4_5 [label="定理4.5. 点列に関するコーシーの条件"]
+            a_prop_1_5_1 [label="定理5.1. 級数に関するコーシーの収束条件"]
+            a_prop_1_5_1c1 [label="定理5.1.系1. 級数が収束すれば各項→0"]
+            a_prop_1_5_2 [label="定理5.2. 絶対収束ならば収束"]
             a_prop_1_5_3 [label="命題5.3. 和と定数倍の収束"]
             a_prop_1_5_4 [label="定理5.4. 正項級数の収束判定条件"]
             a_prop_1_5_5 [label="定理5.5. 比較定理"]
             a_prop_1_5_6 [label="定理5.6. ratio/root test の補題"]
             a_prop_1_5_7 [label="定理5.7. ratio test"]
+            a_prop_1_5_8 [label="定理5.8. 絶対収束級数の積"]
             a_prop_1_6_1 [label="命題6.1. 閉包の基本性質"]
             a_prop_1_6_2 [label="定理6.2. 関数の収束の点列による表現"]
             a_prop_1_6_5 [label="命題6.5. 連続性の言い換え"]
             a_prop_1_6_6 [label="定理6.6. 和・定数倍と極限との交換"]
             a_prop_1_6_8 [label="定理6.8. ベクトル値関数とその成分の極限"]
             a_prop_1_6_10 [label="定理6.10. 関数に関するコーシーの条件"]
+            a_prop_1_6_11 [label="定理6.11. 関数項級数の連続性"]
             a_prop_1_7_1 [label="命題7.1. 閉集合と開集合の基本性質"]
             a_prop_1_7_2 [label="定理7.2. 点列コンパクト⇔有界閉集合"]
             a_prop_1_7_3 [label="定理7.3. 最大値の定理"]
@@ -149,12 +154,22 @@ graph math {
             label = "第3章 初等関数"
 
             a_def_3_1_1 [label="§1定義1. 複素微分可能", shape=ellipse]
+            a_def_3_2_0 [label="§2定義0. 整級数", shape=ellipse]
+            a_def_3_2_1 [label="§2定義1. 収束半径", shape=ellipse]
 
             a_prop_3_1_1 [label="定理1.1. コーシー・リーマンの方程式"]
             a_prop_3_1_2 [label="命題1.2. 複素微分の基本性質"]
             a_prop_3_1_3 [label="定理1.3. 複素微分の連鎖律"]
             a_prop_3_1_4 [label="命題1.4. 領域でf'(z)=0ならば定数"]
+            a_prop_3_2_1 [label="定理2.1. 収束半径のwell-definedness"]
+            a_prop_3_2_2 [label="定理2.2. ratio test"]
+            a_prop_3_2_3 [label="定理2.3. 整級数の積"]
+            a_prop_3_2_4 [label="定理2.4. 項別微分した整級数の収束半径"]
+            a_prop_3_2_5 [label="定理2.5. 整級数の項別微分"]
+            a_prop_3_2_5c1 [label="定理2.5.系1. 整級数の項別積分"]
+            a_prop_3_3_2 [label="定理3.2. 指数関数の周期は2πiの整数倍"]
             a_prop_3_3_4 [label="定理3.4. 代数学の基本定理"]
+            a_prop_3_4_1 [label="定理4.1. 実/複素一変数関数の逆関数の微分法"]
             a_prop_3_4_2 [label="定理4.2. 単調関数と全単射"]
         }
 
@@ -272,7 +287,7 @@ graph math {
             a_example_4_13_7 [label="§13例7 広義一様収束の例"]
             a_example_4_14_4 [label="§14例4 ディリクレ積分の計算"]
             a_example_4_16_3 [label="§16例3. 有界変動でない関数の例"]
-            a_example_4_17_5 [label="§17例5. ディリクレ積分"]
+            a_example_4_17_5 [label="§17例5. ディリクレ積分（関数を含む場合）"]
 
             a_problem_4_4_8 [label="§5問題8. リーマン・ルベーグの定理"]
             a_problem_4_8_1 [label="§8問題1. 可算個の体積確定集合の合併が体積確定でない例"]
@@ -433,7 +448,7 @@ graph math {
             a_prop_7_6_5 [label="命題6.5. 合成積と平均ノルムの関係"]
             a_prop_7_6_6 [label="命題6.6. L. シュワルツの補題"]
             a_prop_7_6_7 [label="定理6.7. L. シュワルツ"]
-            a_prop_7_6_7c1 [label="定理6.7.c1. パーセヴァルの等式"]
+            a_prop_7_6_7c1 [label="定理6.7.系1. パーセヴァルの等式"]
             a_prop_7_6_8 [label="定理6.8. ディリクレの積分公式"]
             a_prop_7_6_9 [label="定理6.9. フーリエの重積分公式・反転公式"]
             a_prop_7_6_9c1 [label="定理6.9.系1. 偶/奇関数に対する重積分公式"]
@@ -495,152 +510,97 @@ graph math {
         subgraph cluster_analysis_9 {
             label = "第9章 複素解析"
 
-            a_def_9_14_2 [label="§14定義2. 基本領域"]
-        }
-    }
+            a_def_9_1_1 [label="§1定義1. 複素線積分", shape=ellipse]
+            a_def_9_1_2 [label="§1定義2. （ジョルダン）閉曲線", shape=ellipse]
+            a_def_9_1_3 [label="§1定義3. 原始関数", shape=ellipse]
+            a_def_9_3_1 [label="§3定義1. 整関数", shape=ellipse]
+            a_def_9_3_2 [label="§3定義2. （n次の）零点", shape=ellipse]
+            a_def_9_4_1 [label="§4定義1. 孤立特異点", shape=ellipse]
+            a_def_9_4_2 [label="§4定義2. ローラン展開", shape=ellipse]
+            a_def_9_4_3 [label="§4定義3. 特異点の分類", shape=ellipse]
+            a_def_9_4_4 [label="§4定義4. 一点での正則性", shape=ellipse]
+            a_def_9_5_1 [label="§5定義1. リーマン球面", shape=ellipse]
+            a_def_9_5_2 [label="§5定義2. リーマン球面での正則性", shape=ellipse]
+            a_def_9_5_3 [label="§5定義3. リーマン球面での特異点の分類", shape=ellipse]
+            a_def_9_5_4 [label="§5定義4. 有理型な関数", shape=ellipse]
+            a_def_9_6_1 [label="§6定義1. 回転数", shape=ellipse]
+            a_def_9_6_2 [label="§6定義2. 連結成分", shape=ellipse]
+            a_def_9_6_3 [label="§6定義3. ホモローグ", shape=ellipse]
+            a_def_9_6_4 [label="§6定義4. サイクル", shape=ellipse]
+            a_def_9_7_1 [label="§7定義1. 単一連結", shape=ellipse]
+            a_def_9_7_2 [label="§7定義2. 枝", shape=ellipse]
+            a_def_9_7_3 [label="§7定義3. 囲む", shape=ellipse]
+            a_def_9_8_1 [label="§8定義1. 留数", shape=ellipse]
+            a_def_9_14_2 [label="§14定義2. 基本領域", shape=ellipse]
 
-    subgraph cluster_linear_algebra {
-        label = "線型代数入門（東京大学出版会）"
-        fontsize = 30
+            a_prop_9_1_1 [label="命題1.1. 複素線積分の三角不等式・項別積分"]
+            a_prop_9_1_2 [label="定理1.2. 微積分法の基本公式と\n原始関数存在の必要条件"]
+            a_prop_9_1_3 [label="定理1.3. 原始関数存在の十分条件"]
+            a_prop_9_1_3c1 [label="定理1.3.系1. 原始関数の公式"]
+            a_prop_9_1_4 [label="定理1.4. 部分積分公式"]
+            a_prop_9_2_1 [label="定理2.1. 三角形に関するコーシーの定理"]
+            a_prop_9_2_1c1 [label="定理2.1.系1. 四角形に関するコーシーの定理"]
+            a_prop_9_2_1c2 [label="定理2.1.系2. 三角形に関するコーシーの定理\n（一点で正則と限らない場合）"]
+            a_prop_9_2_2 [label="定理2.2. 星形領域に関するコーシーの定理"]
+            a_prop_9_2_3 [label="命題2.3. 開集合に含まれるコンパクト集合"]
+            a_prop_9_2_4 [label="定理2.4. コーシーの積分表示式"]
+            a_prop_9_2_4c1 [label="定理2.4.系1. 平均定理"]
+            a_prop_9_3_1 [label="定理3.1. 整級数展開定理"]
+            a_prop_9_3_1c1 [label="定理3.1.系1. テーラーの公式"]
+            a_prop_9_3_1c2 [label="定理3.1.系2. 正則関数とラプラスの方程式"]
+            a_prop_9_3_2 [label="定理3.2. 導関数の積分表示式、\nコーシーの不等式"]
+            a_prop_9_3_3 [label="定理3.3. リューヴィル"]
+            a_prop_9_3_4 [label="定理3.4. モレラ"]
+            a_prop_9_3_5 [label="定理3.5. ワイヤストラス（項別微分）"]
+            a_prop_9_3_5c1 [label="定理3.5.系1. ワイヤストラスの二重級数定理"]
+            a_prop_9_3_6 [label="定理3.6. 正則径数を含む積分の正則性"]
+            a_prop_9_3_7 [label="定理3.7. 零点の孤立性"]
+            a_prop_9_3_8 [label="定理3.8. 一致の定理"]
+            a_prop_9_3_8c1 [label="定理3.8.系1. 部分で一致する正則関数は全体で一致する"]
+            a_prop_9_3_9 [label="定理3.9. 最大値の原理"]
+            a_prop_9_4_1 [label="命題4.1. 円板内の2個の特異点周りの線積分"]
+            a_prop_9_4_1c1 [label="命題4.1.系1. 円板内の1個の特異点周りの線積分"]
+            a_prop_9_4_2 [label="定理4.2. ローラン級数"]
+            a_prop_9_4_2c1 [label="定理4.2.系1. ローラン展開の広義一様収束"]
+            a_prop_9_4_2c2 [label="定理4.2.系2. ローラン展開の一意性"]
+            a_prop_9_4_3 [label="定理4.3. 除去可能特異点の特徴付け"]
+            a_prop_9_4_4 [label="定理4.4. 極の特徴付け"]
+            a_prop_9_4_5 [label="定理4.5. 零点の逆数は極"]
+            a_prop_9_4_6 [label="定理4.6. カソラチ・ワイヤストラスの定理"]
+            a_prop_9_4_7 [label="定理4.7. 孤立特異点の特徴付け"]
+            a_prop_9_5_1 [label="定理5.1. リューヴィルの定理"]
+            a_prop_9_5_2 [label="定理5.2. 特異点∞による多項式の特徴付け"]
+            a_prop_9_5_3 [label="定理5.3. 有理型な関数⇔有理関数"]
+            a_prop_9_5_3c1 [label="定理5.3.系1. リーマン球面は点列コンパクト"]
+            a_prop_9_5_4 [label="定理5.4. 立体射影は角の大きさを変えない"]
+            a_prop_9_5_5 [label="定理5.5. リーマン球面-単位球面間での円周・直線の対応"]
+            a_prop_9_6_1 [label="命題6.1. 回転数のwell-definedness"]
+            a_prop_9_6_2 [label="命題6.2. 回転数の基本性質"]
+            a_prop_9_6_3 [label="定理6.3. 連結成分上での回転数"]
+            a_prop_9_6_4 [label="命題6.4. 区間に関する積分表示式"]
+            a_prop_9_7_1 [label="定理7.1. コーシーの定理"]
+            a_prop_9_7_2 [label="定理7.2. 単一連結領域のコーシーの定理"]
+            a_prop_9_7_3 [label="定理7.3. 一価正則な枝の存在"]
+            a_prop_9_7_4 [label="定理7.4. 一般のコーシー積分表示式"]
+            a_prop_9_7_5 [label="定理7.5. コーシーの積分定理"]
+            a_prop_9_8_1 [label="命題8.1. 留数定理の補題"]
+            a_prop_9_8_2 [label="定理8.2. 留数定理"]
+            a_prop_9_8_2c1 [label="定理8.2.系1. 領域を囲むサイクルに関する留数定理"]
+            a_prop_9_8_3 [label="命題8.3. 極の留数の計算法"]
+            a_prop_9_8_4 [label="命題8.4. f'/fの留数"]
+            a_prop_9_8_5 [label="定理8.5. 偏角の原理"]
+            a_prop_9_8_6 [label="定理8.6. ルーシェの定理"]
+            a_prop_9_8_7 [label="定理8.7. 根の個数"]
+            a_prop_9_8_8 [label="定理8.8. 正則関数の領域保存定理"]
+            a_prop_9_8_9 [label="定理8.9. 正則関数の逆関数定理"]
+            a_prop_9_8_10 [label="定理8.10. ラグランジュの公式\n（逆関数のテーラー展開の係数）"]
+            a_prop_9_8_11 [label="定理8.11. 正則関数列の極限に遺伝される性質"]
+            a_prop_9_9_1 [label="定理9.1. 三角関数の一周期上の積分"]
+            a_prop_9_9_2 [label="定理9.2. 有理関数の無限積分"]
+            a_prop_9_9_3 [label="補助定理9.3. 扇形の円弧での複素線積分"]
 
-        #l_concept_0_a [label="行列の分解", shape=ellipse]
-
-        subgraph cluster_linear_algebra_2 {
-            label = "第2章 行列"
-
-            l_concept_2_a [label="基本変形", shape=ellipse]
-            l_concept_2_b [label="冪零行列", shape=ellipse]
-            l_concept_2_c [label="交代行列", shape=ellipse]
-
-            l_prop_2_4_2 [label="定理4.2. 行列の標準形の存在"]
-            l_prop_2_5_2 [label="定理5.2. 一次方程式系の解法"]
-            l_prop_2_5_5 [label="定理5.5. 斉次一次方程式系の基本解"]
-            l_prop_2_5_9 [label="命題5.9. 斉次・非斉次方程式の関係"]
-
-            l_problem_2_6 [label="問題6"]
-            l_problem_2_11 [label="問題11"]
-            l_problem_2_13 [label="問題13 交換子積"]
-        }
-
-        subgraph cluster_linear_algebra_3 {
-            label = "第3章 行列式"
-
-            l_prop_3_3_1 [label="定理3.1. 余因子展開"]
-        }
-
-        subgraph cluster_linear_algebra_4 {
-            label = "第4章 線型空間"
-
-            l_concept_4_a [label="線型写像", shape=ellipse]
-            l_concept_4_b [label="不変部分空間", shape=ellipse]
-            l_concept_4_c [label="フーリエ級数", shape=ellipse]
-            l_concept_4_d [label="QR分解", shape=ellipse]
-
-            l_prop_4_4_5 [label="定理4.5. 次元定理"]
-            l_prop_4_4_7 [label="定理4.7. 次元公式"]
-            l_prop_4_5_1 [label="定理5.1. 行列表示の標準形の存在"]
-
-            l_example_4_6_6 [label="§6 例6"]
-            l_example_4_6_7 [label="§6 例7"]
-
-            l_problem_4_8 [label="問題8"]
-            l_problem_4_11 [label="問題11"]
-            l_problem_4_12 [label="問題12 双対空間"]
-        }
-
-        subgraph cluster_linear_algebra_5 {
-            label = "第5章 固有値と固有ベクトル"
-
-            l_concept_5_a [label="二次形式", shape=ellipse]
-            l_concept_5_b [label="スペクトル分解", shape=ellipse]
-            l_concept_5_c [label="極分解", shape=ellipse]
-
-            l_prop_5_1_1  [label="命題1.1 固有ベクトルの線型独立性"]
-            l_prop_5_1_2  [label="命題1.2 対角化可能性と固有ベクトルによる基底"]
-            l_prop_5_1_4  [label="命題1.4. 対角化可能性と固有値の重複度"]
-            l_prop_5_2_1 [label="命題2.1. 可換な線型変換の共通固有ベクトル"]
-            l_prop_5_2_2 [label="定理2.2. 同時三角化"]
-            l_prop_5_2_4 [label="定理2.4. 正規行列のユニタリ行列による対角化"]
-            l_prop_5_2_7 [label="定理2.7. 正規変換のスペクトル分解"]
-            l_prop_5_2_9 [label="命題2.9. 正値エルミート変換"]
-            l_prop_5_2_10 [label="定理2.10. 正則行列の極分解"]
-            l_prop_5_2_11 [label="定理2.11. エルミート変換の固有値の評価"]
-            l_prop_5_3_1 [label="定理3.1. 対称行列の直交行列による対角化"]
-            l_prop_5_3_5 [label="命題3.5. 正値対称変換"]
-            l_prop_5_4_1 [label="命題4.1. 二次形式の標準形の存在"]
-            l_prop_5_4_2 [label="定理4.2. シルヴェスタの慣性法則"]
-            l_prop_5_4_3 [label="定理4.3. 正値二次形式"]
-
-            l_problem_5_3 [label="問題3 Tが冪零⇔T^n=O"]
-            l_problem_5_4 [label="問題4 直交行列による同時対角化"]
-            l_problem_5_5 [label="問題5 実交代行列の固有値と階数"]
-        }
-    }
-
-    subgraph cluster_linear_algebra_work {
-        label = "線型代数演習（東京大学出版会）"
-        fontsize = 30
-
-        subgraph cluster_linear_algebra_work_2 {
-            label = "第2章 行列、一次方程式系"
-
-            lw_prop_2_2_10 [label="命題2.2.10. 上三角行列の性質"]
-            lw_prop_2_7_2 [label="命題2.7.2. 行列値関数の微分"]
-            lw_prop_2_7_3 [label="命題2.7.2. 行列値関数の微分の基本性質"]
-            lw_prop_2_7_8 [label="定理2.7.8. 行列の極限とノルムの極限"]
-            lw_prop_2_7_9 [label="定理2.7.9. 完備性"]
-            lw_prop_2_7_17 [label="定理2.7.17. 行列の指数関数の微分"]
-            lw_prop_2_7_18 [label="定理2.7.18. 行列の指数関数の性質"]
-
-            lw_example_2_2_11 [label="例題2.2.11. (i,i)成分が0の上三角行列の積"]
-
-            lw_problem_2_0_25 [label="章末25. 一般逆行列"]
-        }
-
-        subgraph cluster_linear_algebra_work_3 {
-            label = "第3章 線型空間と線型写像"
-
-            lw_prop_3_4_7 [label="定理3.4.7. 行列の三角化"]
-            lw_prop_3_4_10 [label="定理3.4.10. ハミルトン-ケイリー"]
-
-            lw_example_3_2_14 [label="例題3.2.14. ヴァンデルモンドの行列式"]
-        }
-
-        subgraph cluster_linear_algebra_work_4 {
-            label = "第4章 線型空間と線型写像"
-
-            lw_concept_4_a [label="広義固有空間", shape=ellipse]
-            lw_concept_4_b [label="微分方程式", shape=ellipse]
-
-            lw_problem_4_0_2 [label="章末2. a, Ta, ..., T^{m-1}a の線型独立性"]
-            lw_problem_4_0_5 [label="章末5"]
-            lw_problem_4_0_6 [label="章末6 広義固有空間"]
-            lw_problem_4_0_7 [label="章末7 広義固有空間の次元と重複度"]
-            lw_problem_4_0_9 [label="章末9 斉次連立微分方程式"]
-            lw_problem_4_0_10 [label="章末10. 斉次微分方程式）"]
-        }
-
-        subgraph cluster_linear_algebra_work_5 {
-            label = "第5章"
-
-            lw_def_5_4_1 [label="定義5.4.1. ジョルダン行列"]
-
-            lw_prop_5_2_2 [label="定理5.2.2. 対角型線型変換"]
-            lw_prop_5_3_1 [label="解説5.3.1. 斉次線型微分方程式について"]
-            lw_prop_5_3_6 [label="解説5.3.6. 回帰数列について"]
-            lw_prop_5_4_2 [label="定理5.4.2. 冪零変換のジョルダン行列表示"]
-            lw_prop_5_4_3 [label="定理5.4.3. 冪零変換のジョルダン行列表示の一意性"]
-            lw_prop_5_4_4 [label="定理5.4.4. 広義固有空間の変換のジョルダン行列表示"]
-            lw_prop_5_4_5 [label="定理5.4.5. 線型変換のジョルダン行列表示"]
-            lw_prop_5_4_6 [label="定理5.4.6. 実線型変換のジョルダン行列表示"]
-            lw_prop_5_4_7 [label="定理5.4.7. ジョルダン標準形の存在|<pr>複素線型空間", shape=record]
-            lw_prop_5_4_8 [label="定理5.4.8. ジョルダン標準形の存在|<pr>実戦型空間", shape=record]
-        }
-
-        subgraph cluster_linear_algebra_work_6 {
-            label = "第6章"
-
-            lw_problem_6_0_9 [label="章末3"]
+            a_example_9_1_4 [label="§1例4. 原始関数が存在しない例"]
+            a_example_9_2_5 [label="§2例5. コーシーの定理によるディリクレ積分の計算"]
         }
     }
 
@@ -1812,4 +1772,305 @@ graph math {
     a_prop_7_6_9 -- a_prop_7_6_1
     a_prop_7_6_9 -- a_prop_4_13_6
     a_prop_7_6_9c1 -- a_prop_7_6_9
+
+    a_prop_9_1_1 -- a_def_9_1_1
+    a_prop_9_1_1 -- a_prop_4_2_2
+    a_prop_9_1_1 -- a_prop_4_13_6
+
+    a_def_9_1_3 -- a_def_3_1_1
+
+    a_prop_9_1_2 -- a_def_9_1_1
+    a_prop_9_1_2 -- a_def_9_1_2
+    a_prop_9_1_2 -- a_def_9_1_3
+    a_prop_9_1_2 -- a_def_3_1_1
+    a_prop_9_1_2 -- a_prop_4_5_3
+
+    a_example_9_1_4 -- a_def_9_1_3
+    a_example_9_1_4 -- a_prop_9_1_2
+
+    a_prop_9_1_3 -- a_prop_9_1_2 [label="逆の主張"]
+    a_prop_9_1_2 -- a_prop_8_6_1 [label="ポテンシャルと原始関数の関係？"]
+    a_prop_9_1_2 -- a_prop_1_8_2
+    a_prop_9_1_2 -- a_prop_4_5_3
+    a_prop_9_1_2 -- a_prop_9_1_1
+
+    a_prop_9_1_3c1 -- a_prop_9_1_3
+    a_prop_9_1_4 -- a_def_9_1_1
+    a_prop_9_1_4 -- a_prop_3_1_2
+
+    a_prop_9_2_1 -- a_prop_1_3_3 [taillabel="三角形を小さくしていく"]
+    a_prop_9_2_1 -- a_prop_9_1_2
+    a_prop_9_2_1 -- a_prop_9_1_1
+    a_prop_9_2_1c1 -- a_prop_9_2_1
+    a_prop_9_2_1c2 -- a_prop_9_2_1
+    a_prop_9_2_1c2 -- a_prop_9_1_1
+
+    a_prop_9_2_2 -- a_example_1_8_2
+    a_prop_9_2_2 -- a_prop_9_2_1c2
+    a_prop_9_2_2 -- a_prop_9_1_2
+
+    a_example_9_2_5 -- a_prop_9_2_2
+    a_example_9_2_5 -- a_example_4_14_4
+
+    a_prop_9_2_4 -- a_prop_9_2_3
+    a_prop_9_2_4 -- a_prop_9_2_2
+    a_prop_9_2_4c1 -- a_prop_9_2_4
+
+    a_prop_9_3_1 -- a_prop_9_2_4
+    a_prop_9_3_1 -- a_prop_3_2_5
+
+    a_prop_3_2_1 -- a_def_3_2_0
+    a_prop_3_2_1 -- a_def_3_2_1
+    a_prop_3_2_1 -- a_prop_1_5_1c1
+    a_prop_3_2_1 -- a_prop_1_5_5
+
+    a_prop_1_5_1c1 -- a_prop_1_5_1
+    a_prop_1_5_1 -- a_prop_1_4_5
+
+    a_prop_3_2_2 -- a_def_3_2_0
+    a_prop_3_2_2 -- a_def_3_2_1
+    a_prop_3_2_2 -- a_prop_1_5_7
+
+    a_prop_1_5_1 -- a_def_1_5_0
+    a_prop_1_5_3 -- a_def_1_5_0
+    a_prop_1_5_4 -- a_def_1_5_0
+    a_prop_1_5_5 -- a_def_1_5_0
+    a_prop_1_5_7 -- a_def_1_5_0
+    a_prop_1_5_8 -- a_def_1_5_0
+
+    a_prop_3_2_3 -- a_def_3_2_0
+    a_prop_3_2_3 -- a_prop_1_5_3
+    a_prop_3_2_3 -- a_prop_1_5_8
+
+    a_prop_3_2_4 -- a_def_3_2_1
+
+    a_prop_3_2_5 -- a_def_3_2_0
+    a_prop_3_2_5 -- a_def_2_1_1
+    a_prop_3_2_5 -- a_prop_3_2_4
+    a_prop_3_2_5 -- a_prop_1_6_11
+
+    a_prop_1_6_11 -- a_prop_1_5_5
+    a_prop_1_6_11 -- a_prop_1_5_2
+    a_prop_1_6_11 -- a_prop_1_6_6
+
+    a_prop_1_5_2 -- a_prop_1_5_1
+
+    a_prop_3_2_5c1 -- a_prop_3_2_4
+    a_prop_3_2_5c1 -- a_prop_3_2_5
+
+    a_prop_9_3_1c1 -- a_prop_9_3_1
+    a_prop_9_3_1c2 -- a_prop_9_3_1
+
+    aw_problem_2_5_4 -- a_prop_3_2_3 [style=dotted]
+
+    a_prop_9_3_2 -- a_prop_9_3_1
+    a_prop_9_3_2 -- a_prop_9_2_4
+    a_prop_9_3_2 -- a_prop_9_1_4
+    a_prop_9_3_2 -- a_prop_9_1_1
+
+    a_prop_9_3_3 -- a_prop_9_3_2
+    a_prop_9_3_3 -- a_prop_9_1_2
+    a_prop_9_3_3 -- a_def_9_3_1
+
+    a_prop_9_3_4 -- a_prop_9_1_3
+    a_prop_9_3_4 -- a_prop_9_3_1
+    a_prop_9_3_5 -- a_prop_9_2_2
+    a_prop_9_3_5 -- a_prop_9_1_1
+    a_prop_9_3_5 -- a_prop_9_3_4
+    a_prop_9_3_5 -- a_prop_4_13_7 [taillabel="導関数に関する仮定が不要"]
+
+    a_prop_9_3_5c1 -- a_prop_9_3_5
+    a_prop_9_3_5c1 -- a_prop_9_3_1
+
+    a_prop_9_3_1c2 -- a_prop_3_1_1
+
+    a_prop_9_3_6 -- a_prop_3_1_1
+    a_prop_9_3_6 -- a_prop_4_14_1
+
+    a_prop_9_3_7 -- a_def_9_3_2
+    a_prop_9_3_7 -- a_prop_9_3_1
+    a_prop_9_3_7 -- a_prop_1_5_3
+    a_prop_9_3_7 -- a_prop_3_2_5
+    a_prop_9_3_7 -- a_prop_2_1_5
+
+    a_prop_9_3_8 -- a_prop_9_3_7
+    a_prop_9_3_8c1 -- a_prop_9_3_8
+
+    a_prop_9_3_9 -- a_prop_9_2_4c1
+    a_prop_9_3_9 -- a_prop_4_4_3
+    a_prop_9_3_9 -- a_prop_9_3_8
+    a_prop_9_3_9 -- a_prop_1_7_3
+
+    a_prop_9_4_1 -- a_prop_9_2_2
+    a_prop_9_4_1c1 -- a_prop_9_4_1
+
+    a_prop_9_4_2 -- a_prop_9_4_1
+    a_prop_9_4_2 -- a_prop_9_2_4
+    a_prop_9_4_2 -- a_prop_9_3_1
+
+    a_def_9_4_2 -- a_prop_9_4_2
+
+    a_prop_9_4_2c1 -- a_prop_9_4_2
+    a_prop_9_4_2c1 -- a_prop_4_13_5
+    a_prop_9_4_2c1 -- a_prop_3_2_1
+
+    a_prop_9_4_2c2 -- a_prop_9_4_2
+    a_prop_9_4_2c2 -- a_prop_9_4_2c1
+
+    a_def_9_4_3 -- a_def_9_4_1
+    a_def_9_4_3 -- a_def_9_4_2
+
+    a_prop_9_4_3 -- a_def_9_4_3
+    a_prop_9_4_3 -- a_prop_3_2_5
+    a_prop_9_4_3 -- a_prop_9_4_2
+
+    a_prop_9_4_4 -- a_def_9_4_3
+    a_prop_9_4_4 -- a_prop_9_4_2
+    a_prop_9_4_4 -- a_prop_9_3_1
+
+    a_prop_9_4_5 -- a_def_9_4_3
+    a_prop_9_4_5 -- a_def_9_3_2
+    a_prop_9_4_5 -- a_prop_9_4_4
+    a_prop_9_4_5 -- a_prop_9_3_7
+
+    a_prop_9_4_6 -- a_def_9_4_3
+    a_prop_9_4_6 -- a_def_9_4_1
+    a_prop_9_4_6 -- a_prop_9_4_3
+    a_prop_9_4_6 -- a_prop_9_4_5
+
+    a_prop_9_4_7 -- a_def_9_4_3
+    a_prop_9_4_7 -- a_def_9_4_1
+    a_prop_9_4_7 -- a_prop_9_4_4
+    a_prop_9_4_7 -- a_prop_9_4_6
+
+    a_def_9_5_1 -- a_prop_9_4_5
+
+    a_def_9_5_2 -- a_def_9_5_1
+    a_def_9_5_2 -- a_def_3_1_1
+    a_def_9_5_3 -- a_def_9_5_1
+    a_def_9_5_3 -- a_def_9_5_2
+    a_def_9_5_3 -- a_def_9_4_3
+
+    a_prop_9_5_1 -- a_def_9_5_1
+    a_prop_9_5_1 -- a_prop_9_3_3
+
+    a_prop_9_5_2 -- a_prop_9_5_1
+
+    a_prop_9_5_3 -- a_def_9_4_3
+    a_prop_9_5_3 -- a_def_9_4_4
+    a_prop_9_5_3 -- a_def_9_5_4
+    a_prop_9_5_3 -- a_prop_1_3_4
+    a_prop_9_5_3 -- a_prop_9_5_1
+
+    a_prop_9_5_3c1 -- a_prop_9_5_3
+
+    a_prop_9_5_4 -- a_def_9_5_1
+    a_prop_9_5_5 -- a_def_9_5_1
+
+    a_def_9_6_1 -- a_prop_9_6_1
+    a_prop_9_6_1 -- a_prop_4_5_3
+    a_prop_9_6_1 -- a_prop_4_5_2
+    a_prop_9_6_1 -- a_prop_3_3_2
+
+    a_prop_9_6_2 -- a_def_9_6_1
+    a_prop_9_6_2 -- a_def_9_1_1
+    a_prop_9_6_2 -- a_prop_9_2_2
+
+    a_def_9_6_2 -- a_prop_1_8_2
+
+    a_prop_9_6_3 -- a_def_9_6_1
+    a_prop_9_6_3 -- a_def_9_6_2
+    a_prop_9_6_3 -- a_prop_9_3_6
+    a_prop_9_6_3 -- a_prop_1_8_1
+    a_prop_9_6_3 -- a_prop_9_6_2
+
+    a_prop_9_6_4 -- a_prop_9_2_4
+
+    a_def_9_6_4 -- a_def_9_6_3
+
+    a_prop_9_7_1 -- a_def_9_6_3
+    a_prop_9_7_1 -- a_def_9_6_4
+    a_prop_9_7_1 -- a_prop_9_2_3
+    a_prop_9_7_1 -- a_prop_9_6_3
+    a_prop_9_7_1 -- a_prop_9_6_4
+    a_prop_9_7_1 -- a_prop_9_2_2
+    a_prop_9_7_1 -- a_prop_4_7_3
+
+    a_def_9_7_1 -- a_def_8_6_2 [label="実はCの領域については同値"]
+
+    a_prop_9_7_2 -- a_def_9_7_1
+    a_prop_9_7_2 -- a_prop_9_7_1
+    a_prop_9_7_2 -- a_prop_9_1_3
+
+    a_prop_9_7_3 -- a_def_9_7_2
+    a_prop_9_7_3 -- a_prop_9_7_2
+
+    a_prop_9_7_4 -- a_prop_9_4_3
+    a_prop_9_7_4 -- a_prop_9_7_1
+    a_prop_9_7_4 -- a_prop_9_2_4
+
+    a_def_9_7_3 -- a_def_9_6_4
+
+    a_prop_9_7_5 -- a_def_9_7_3
+    a_prop_9_7_5 -- a_prop_9_7_1
+    a_prop_9_7_5 -- a_prop_9_7_4
+
+    a_prop_9_8_1 -- a_def_9_8_1
+    a_prop_9_8_1 -- a_def_9_6_1
+    a_prop_9_8_1 -- a_prop_9_1_2
+    a_prop_9_8_1 -- a_prop_9_4_2c1
+    a_prop_9_8_1 -- a_prop_9_1_1
+
+    a_prop_9_8_2 -- a_def_9_8_1
+    a_prop_9_8_2 -- a_prop_9_8_1
+    a_prop_9_8_2 -- a_prop_9_6_2
+    a_prop_9_8_2 -- a_prop_9_7_1
+    a_prop_9_8_2 -- a_prop_9_8_1
+
+    a_prop_9_8_2c1 -- a_prop_9_8_2
+    a_prop_9_8_2c1 -- a_def_9_7_3
+
+    a_prop_9_8_3 -- a_def_9_8_1
+
+    a_prop_9_8_4 -- a_def_9_8_1
+    a_prop_9_8_4 -- a_prop_9_3_7
+    a_prop_9_8_4 -- a_prop_9_4_4
+
+    a_prop_9_8_5 -- a_prop_9_8_2
+    a_prop_9_8_5 -- a_prop_9_8_4
+    a_prop_9_8_5 -- a_def_9_5_4
+
+    a_prop_9_8_6 -- a_prop_9_6_2
+    a_prop_9_8_6 -- a_prop_9_8_5
+
+    a_prop_9_8_7 -- a_prop_9_8_5
+    a_prop_9_8_7 -- a_prop_9_6_3
+    a_prop_9_8_7 -- a_prop_9_3_7
+
+    a_prop_9_8_8 -- a_prop_9_8_7
+    a_prop_9_8_8 -- a_prop_1_8_2
+    a_prop_9_8_8 -- a_prop_6_2_4
+
+    a_prop_9_8_9 -- a_prop_6_2_1
+    a_prop_9_8_9 -- a_prop_9_8_7
+    a_prop_9_8_9 -- a_prop_9_8_8
+    a_prop_9_8_9 -- a_prop_9_3_1
+    a_prop_9_8_9 -- a_prop_3_4_1
+
+    a_prop_3_4_1 -- a_prop_2_6_10 [taillabel="簡単な仮定で成り立つ"]
+
+    a_prop_9_8_10 -- a_prop_9_1_1
+    a_prop_9_8_10 -- a_prop_9_8_2
+    a_prop_9_8_10 -- a_prop_9_8_3
+
+    a_prop_9_8_11 -- a_prop_9_3_7
+    a_prop_9_8_11 -- a_prop_9_8_5
+
+    a_prop_9_9_1 -- a_prop_9_8_2
+
+    a_prop_9_9_2 -- a_prop_9_8_2
+    a_prop_9_9_2 -- a_prop_4_11_3
+    a_prop_9_9_2 -- a_prop_9_9_3
+
+    a_prop_9_9_3 -- a_prop_9_1_1
 }

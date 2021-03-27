@@ -215,6 +215,7 @@ graph math {
             a_prop_4_5_6 [label="命題5.6. 変数変換公式"]
             a_prop_4_5_7 [label="定理5.7. 部分積分法"]
             a_prop_4_5_8 [label="定理5.8. 有限増分の定理II\nC1級の場合"]
+            a_prop_4_6_1 [label="定理6.1. 実有理関数の部分分数分解"]
             a_prop_4_7_1 [label="定理7.1. 直積集合と累次積分"]
             a_prop_4_7_2 [label="定理7.2. 多重有界閉区間と累次積分"]
             a_prop_4_7_3 [label="定理7.3. 連続関数と累次積分"]
@@ -249,7 +250,7 @@ graph math {
             a_prop_4_13_3c1 [label="定理13.3.系1. 極限の交換"]
             a_prop_4_13_3c2 [label="定理13.3.系2. 連続関数族の広義一様収束先も連続"]
             a_prop_4_13_4 [label="定理13.4. 一様コーシー条件"]
-            a_prop_4_13_5 [label="定理13.5. ワイヤストラスのMテスト\n級数の一様収束性判定"]
+            a_prop_4_13_5 [label="定理13.5. ワイヤストラスのMテスト\n関数項級数の一様収束判定"]
             a_prop_4_13_6 [label="定理13.6. 項別積分定理\n一様収束"]
             a_prop_4_13_7 [label="定理13.7. 項別微分定理"]
             a_prop_4_13_8 [label="定理13.8. ディニの定理"]
@@ -304,6 +305,8 @@ graph math {
             a_def_5_5_2 [label="§5定義2 F近似列", shape=ellipse]
             a_def_5_5_3 [label="§5定義3 二重級数の絶対収束", shape=ellipse]
             a_def_5_5_4 [label="§5定義4 一列化", shape=ellipse]
+            a_def_5_6_1 [label="§6定義1 無限積の絶対収束", shape=ellipse]
+            a_def_5_6_2 [label="§6定義2 無限積の各点/一様収束", shape=ellipse]
 
             a_prop_5_1_1 [label="命題1.1. 補完数直線における上限の存在"]
             a_prop_5_1_2 [label="命題1.2. 補完数直線の単調点列の収束"]
@@ -328,6 +331,11 @@ graph math {
             a_prop_5_5_3 [label="命題5.3. 絶対収束ならば任意のF近似列で収束する"]
             a_prop_5_5_4 [label="定理5.4. 絶対収束二重級数の総和記号の順序交換"]
             a_prop_5_5_5 [label="定理5.5. 一列化の絶対収束"]
+            a_prop_5_6_1 [label="定理6.1. 無限積のコーシーの収束条件"]
+            a_prop_5_6_1c1 [label="定理6.1.系1. 無限積が収束すれば各項→1"]
+            a_prop_5_6_2 [label="定理6.2. 級数の収束と無限積の収束の同値性"]
+            a_prop_5_6_3 [label="定理6.3. 無限積の絶対収束"]
+            a_prop_5_6_4 [label="定理6.4. 無限積のワイヤストラスのMテスト"]
 
             a_example_5_5_1 [label="§5例1 アイゼンシュタイン級数"]
         }
@@ -600,9 +608,22 @@ graph math {
             a_prop_9_9_1 [label="定理9.1. 三角関数の一周期上の積分"]
             a_prop_9_9_2 [label="定理9.2. 有理関数の無限積分"]
             a_prop_9_9_3 [label="補助定理9.3. 扇形の円弧での複素線積分"]
+            a_prop_9_9_4 [label="定理9.4. フーリエ変換の計算（上半平面）"]
+            a_prop_9_9_4c1 [label="定理9.4.系1. フーリエ変換の計算（下半平面）"]
+            a_prop_9_9_5 [label="命題9.5. 極の周りの半円周上の積分"]
+            a_prop_9_9_6 [label="定理9.6. フーリエ変換の計算（実軸に極を持つ）"]
+            a_prop_9_9_7 [label="定理9.7. logxを含む積分（正の実軸に極を持たない）"]
+            a_prop_9_9_7c1 [label="定理9.7.系1. logxを含む積分（正の実軸に極を持つ）"]
+            a_prop_9_9_8 [label="定理9.8. メリン変換"]
+            a_prop_9_10_1 [label="定理10.1. ミッタク・レフラーの定理"]
+            a_prop_9_10_2 [label="定理10.2. 有理型関数の整数にわたる級数"]
+            a_prop_9_10_3 [label="定理10.3. cot の部分分数展開"]
+            a_prop_9_10_4 [label="命題10.4. cotz, tanz などのテーラー展開"]
 
             a_example_9_1_4 [label="§1例4. 原始関数が存在しない例"]
+            a_example_9_2_1 [label="§2例1. フレネルの積分"]
             a_example_9_2_5 [label="§2例5. コーシーの定理によるディリクレ積分の計算"]
+            a_example_9_10_1 [label="§10例1. 1/sin^2 の部分分数展開"]
         }
     }
 
@@ -2220,4 +2241,52 @@ graph math {
     a_prop_9_9_2 -- a_prop_9_9_3
 
     a_prop_9_9_3 -- a_prop_9_1_1
+
+    a_example_9_2_1 -- a_example_7_1_9
+
+    a_prop_9_9_4 -- a_prop_9_8_2
+    a_prop_9_9_4c1 -- a_prop_9_9_4
+
+    a_prop_9_9_6 -- a_prop_9_9_5
+    a_prop_9_9_6 -- a_prop_9_9_4
+
+    a_prop_9_9_7 -- a_prop_3_3_2
+    a_prop_9_9_7 -- a_prop_4_11_3
+    a_prop_9_9_7 -- a_def_9_7_2
+    a_prop_9_9_7 -- a_prop_9_8_1
+
+    a_prop_9_9_7c1 -- a_prop_9_9_7
+    a_prop_9_9_7c1 -- a_prop_9_9_5
+
+    a_prop_9_9_8 -- a_prop_9_8_1
+    a_prop_9_9_8 -- a_prop_4_11_3
+
+    a_prop_9_10_1 -- a_prop_9_3_1
+    a_prop_9_10_1 -- a_prop_4_6_1 [taillabel="有理型関数の部分分数表示"]
+    a_prop_9_10_1 -- a_def_9_5_4
+
+    a_prop_9_10_2 -- a_prop_9_10_1
+
+    a_prop_9_10_3 -- a_prop_9_10_1
+    a_prop_9_10_3 -- a_example_9_10_1
+
+    a_example_9_10_1 -- a_prop_9_10_2
+    a_example_9_10_1 -- a_prop_9_8_3
+
+    a_prop_9_10_4 -- a_prop_3_3_2
+    a_prop_9_10_4 -- aw_problem_2_5_4
+    a_prop_9_10_4 -- a_prop_3_2_3
+
+    a_prop_5_6_1 -- a_prop_1_4_5
+    a_prop_5_6_1c1 -- a_prop_5_6_1
+
+    a_prop_5_6_2 -- a_prop_5_6_1c1
+
+    a_prop_5_6_3 -- a_prop_5_6_1
+    a_prop_5_6_3 -- a_def_5_6_1
+
+    a_prop_5_6_4 -- a_def_5_6_2
+    a_prop_5_6_4 -- a_prop_4_13_5
+    a_prop_5_6_4 -- a_prop_5_6_2
+    a_prop_5_6_4 -- a_prop_5_6_3
 }
